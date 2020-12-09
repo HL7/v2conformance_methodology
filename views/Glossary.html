@@ -1,0 +1,2678 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta content='text/html; charset=windows-1252' http-equiv='Content-Type'>
+<title>
+HL7 - Glossary
+</title>
+<link href='images/hl7_favicon.ico' rel='shortcut icon' type='image/x-icon'>
+<style type='text/css'>
+<!-- @import './css/hl7.css'; -->
+<!-- @import './css/fhir.css'; -->
+<!-- @import './css/bootstrap.css'; -->
+<!-- @import './css/ bootstrap-v2_conformance.css'; -->
+<!-- @import './css/project.css'; -->
+<!-- @import './css/pygments-manni.css'; -->
+<!-- @import './css/jquery-ui.css'; -->
+<!-- @import './css/modules.css'; -->
+@import 'css/hl7.css';
+@import 'css/fhir.css';
+@import 'css/bootstrap.css';
+@import 'css/ bootstrap-v2_conformance.css';
+@import 'css/project.css';
+@import 'css/pygments-manni.css';
+@import 'css/jquery-ui.css';
+@import 'css/modules.css';
+@import 'css/codemirror.css';
+@import 'css/yamm.css';
+@import 'css/v2_conformance.css';
+</style>
+<meta content='(C) Health Level Seven, Int. 2020' name='COPYRIGHT'>
+<meta content='Michael Faughn' name='Developer'>
+</head>
+<body style='padding-top: 210px'>
+<nav class='navbar navbar-inverse navbar-fixed-top'>
+<div class='container'>
+<!-- HEADER CONTENT -->
+<div id='segment-header'>
+<div class='navbar-header'>
+<div class='container' style='padding-top:10px'>
+<a href='http://www.hl7.org/' id='logo' no-external='true'>
+<img alt='HL7 International' src='images/hl7-logo-header.png' width='120'>
+</a>
+<div id='hl7-nav'>
+<a href='http://v2.hl7.org/' id='hl7-logo' no-external='true'>
+<img alt='Visit the HL7 V2 website' height='50' src='images/HL7-v2-logo.png'>
+</a>
+</div>
+</div>
+</div>
+<button class='navbar-toggle' data-target='.navbar-inverse-collapse' data-toggle='collapse' type='button'></button>
+</div>
+<div id='stripe'></div>
+<div class='navbar-nav-box' id='segment-navbar'>
+<div class='container'>
+<div class='nav-collapse collapse navbar-inverse-collapse'>
+<ul class='nav navbar-nav'>
+<li class='navbar-v2web'>
+<a href='index.html'>V2 Conformance Home</a>
+</li>
+<li class='navbar-v2web dropdown'>
+<a class='dropdown-toggle' data-toggle='dropdown' href='#'>
+Sections
+<b class='caret'></b>
+</a>
+<ul class='dropdown-menu multi-level'>
+<li class='navbar-v2web dropdown-submenu'>
+<a href='Introduction.html'>
+1 Introduction
+</a>
+<ul class='dropdown-menu'>
+<li class='navbar-v2web dropdown'>
+<a href='Introduction.html#1-1-Purpose'>
+1.1 Purpose
+</a>
+</li>
+
+<li class='navbar-v2web dropdown'>
+<a href='Introduction.html#1-2-Conventions-and-Definitions'>
+1.2 Conventions and Definitions
+</a>
+</li>
+
+<li class='navbar-v2web dropdown'>
+<a href='Introduction.html#1-3-Concepts-and-their-Relationships'>
+1.3 Concepts and their Relationships
+</a>
+</li>
+
+<li class='navbar-v2web dropdown'>
+<a href='Introduction.html#1-4-Profiling-and-Profile-Construction-Overview'>
+1.4 Profiling and Profile Construction Overview
+</a>
+</li>
+
+<li class='navbar-v2web dropdown'>
+<a href='Introduction.html#1-5-Implementation-Guides-in-Context-of-Use'>
+1.5 Implementation Guides in Context of Use
+</a>
+</li>
+
+</ul>
+</li>
+
+<li class='navbar-v2web dropdown-submenu'>
+<a href='Profile-Levels.html'>
+2 Profile Levels
+</a>
+<ul class='dropdown-menu'>
+<li class='navbar-v2web dropdown'>
+<a href='Profile-Levels.html#2-1-Profiles-in-Use'>
+2.1 Profiles in Use
+</a>
+</li>
+
+</ul>
+</li>
+
+<li class='navbar-v2web dropdown-submenu'>
+<a href='HL7-v2-Implementation-Guides.html'>
+3 HL7 v2 Implementation Guides
+</a>
+<ul class='dropdown-menu'>
+<li class='navbar-v2web dropdown'>
+<a href='HL7-v2-Implementation-Guides.html#3-1-Background'>
+3.1 Background
+</a>
+</li>
+
+<li class='navbar-v2web dropdown'>
+<a href='HL7-v2-Implementation-Guides.html#3-2-Actors'>
+3.2 Actors
+</a>
+</li>
+
+<li class='navbar-v2web dropdown'>
+<a href='HL7-v2-Implementation-Guides.html#3-3-Use-Case'>
+3.3 Use Case
+</a>
+</li>
+
+<li class='navbar-v2web dropdown'>
+<a href='HL7-v2-Implementation-Guides.html#3-4-Messaging-Infrastructure'>
+3.4 Messaging Infrastructure
+</a>
+</li>
+
+<li class='navbar-v2web dropdown'>
+<a href='HL7-v2-Implementation-Guides.html#3-5-Other-Relevant-Information'>
+3.5 Other Relevant Information
+</a>
+</li>
+
+</ul>
+</li>
+
+<li class='navbar-v2web dropdown-submenu'>
+<a href='Message-Profiles.html'>
+4 Message Profiles
+</a>
+<ul class='dropdown-menu'>
+<li class='navbar-v2web dropdown'>
+<a href='Message-Profiles.html#4-1-Message-Profile-Identification'>
+4.1 Message Profile Identification
+</a>
+</li>
+
+<li class='navbar-v2web dropdown'>
+<a href='Message-Profiles.html#4-2-Message-Level-Profiling'>
+4.2 Message Level Profiling
+</a>
+</li>
+
+<li class='navbar-v2web dropdown'>
+<a href='Message-Profiles.html#4-3-Segment-Level-Profiling'>
+4.3 Segment Level Profiling
+</a>
+</li>
+
+<li class='navbar-v2web dropdown'>
+<a href='Message-Profiles.html#4-4-Data-Type-Profiling'>
+4.4 Data Type Profiling
+</a>
+</li>
+
+<li class='navbar-v2web dropdown'>
+<a href='Message-Profiles.html#4-5-Primitive-Element-Profiling'>
+4.5 Primitive Element Profiling
+</a>
+</li>
+
+<li class='navbar-v2web dropdown'>
+<a href='Message-Profiles.html#4-6-Differential-Profiles'>
+4.6 Differential Profiles
+</a>
+</li>
+
+<li class='navbar-v2web dropdown'>
+<a href='Message-Profiles.html#4-7-Extensions'>
+4.7 Extensions
+</a>
+</li>
+
+</ul>
+</li>
+
+<li class='navbar-v2web dropdown-submenu'>
+<a href='Constraints.html'>
+5 Constraints
+</a>
+<ul class='dropdown-menu'>
+<li class='navbar-v2web dropdown'>
+<a href='Constraints.html#5-1-Usage'>
+5.1 Usage
+</a>
+</li>
+
+<li class='navbar-v2web dropdown'>
+<a href='Constraints.html#5-2-Cardinality'>
+5.2 Cardinality
+</a>
+</li>
+
+<li class='navbar-v2web dropdown'>
+<a href='Constraints.html#5-3-Data-Type-Specialization--Flavor-'>
+5.3 Data Type Specialization (Flavor)
+</a>
+</li>
+
+<li class='navbar-v2web dropdown'>
+<a href='Constraints.html#5-4-Content'>
+5.4 Content
+</a>
+</li>
+
+<li class='navbar-v2web dropdown'>
+<a href='Constraints.html#5-5-Length'>
+5.5 Length
+</a>
+</li>
+
+<li class='navbar-v2web dropdown'>
+<a href='Constraints.html#5-6-Slicing'>
+5.6 Slicing
+</a>
+</li>
+
+<li class='navbar-v2web dropdown'>
+<a href='Constraints.html#5-7-Conformance-Statement'>
+5.7 Conformance Statement
+</a>
+</li>
+
+<li class='navbar-v2web dropdown'>
+<a href='Constraints.html#5-8-Co-Constraints'>
+5.8 Co-Constraints
+</a>
+</li>
+
+<li class='navbar-v2web dropdown'>
+<a href='Constraints.html#5-9-Semantic-Refinement'>
+5.9 Semantic Refinement
+</a>
+</li>
+
+</ul>
+</li>
+
+<li class='navbar-v2web dropdown-submenu'>
+<a href='Vocabulary-Constraints.html'>
+6 Vocabulary Constraints
+</a>
+<ul class='dropdown-menu'>
+<li class='navbar-v2web dropdown'>
+<a href='Vocabulary-Constraints.html#6-1-Vocabulary-Profiling-Mechanics'>
+6.1 Vocabulary Profiling Mechanics
+</a>
+</li>
+
+<li class='navbar-v2web dropdown'>
+<a href='Vocabulary-Constraints.html#6-2-Typical-Vocabulary-Bindings'>
+6.2 Typical Vocabulary Bindings
+</a>
+</li>
+
+<li class='navbar-v2web dropdown'>
+<a href='Vocabulary-Constraints.html#6-3-Single-Code-Element-Binding'>
+6.3 Single Code Element Binding
+</a>
+</li>
+
+<li class='navbar-v2web dropdown'>
+<a href='Vocabulary-Constraints.html#6-4-Use-of-Extensibility-and-Stability'>
+6.4 Use of Extensibility and Stability
+</a>
+</li>
+
+<li class='navbar-v2web dropdown'>
+<a href='Vocabulary-Constraints.html#6-5-Profiling-at-the-Code-Level'>
+6.5 Profiling at the Code Level
+</a>
+</li>
+
+<li class='navbar-v2web dropdown'>
+<a href='Vocabulary-Constraints.html#6-6-Profiling-HL7-Tables'>
+6.6 Profiling HL7 Tables
+</a>
+</li>
+
+<li class='navbar-v2web dropdown'>
+<a href='Vocabulary-Constraints.html#6-7-Null-Flavors'>
+6.7 Null Flavors
+</a>
+</li>
+
+<li class='navbar-v2web dropdown'>
+<a href='Vocabulary-Constraints.html#6-8-Relationship-of-Coded-Element-Based-Data-Types-and-Flavors'>
+6.8 Relationship of Coded Element Based Data Types and Flavors
+</a>
+</li>
+
+</ul>
+</li>
+
+<li class='navbar-v2web dropdown-submenu'>
+<a href='Profile-Construction.html'>
+7 Profile Construction
+</a>
+<ul class='dropdown-menu'>
+<li class='navbar-v2web dropdown'>
+<a href='Profile-Construction.html#7-1-Profile-Design-and-Management'>
+7.1 Profile Design and Management
+</a>
+</li>
+
+<li class='navbar-v2web dropdown'>
+<a href='Profile-Construction.html#7-2-Selective-Adoption'>
+7.2 Selective Adoption
+</a>
+</li>
+
+</ul>
+</li>
+
+<li class='navbar-v2web dropdown-submenu'>
+<a href='Pairing-Sender-and-Receiver-Profile-for-Use-.html'>
+8 Pairing Sender and Receiver Profile for Use 
+</a>
+<ul class='dropdown-menu'>
+<li class='navbar-v2web dropdown'>
+<a href='Pairing-Sender-and-Receiver-Profile-for-Use-.html#8-1-One-to-one-Profile-Pairing'>
+8.1 One-to-one Profile Pairing
+</a>
+</li>
+
+<li class='navbar-v2web dropdown'>
+<a href='Pairing-Sender-and-Receiver-Profile-for-Use-.html#8-2-One-to-many-Profile-Pairing'>
+8.2 One-to-many Profile Pairing
+</a>
+</li>
+
+<li class='navbar-v2web dropdown'>
+<a href='Pairing-Sender-and-Receiver-Profile-for-Use-.html#8-3-Many-to-one-Profile-Pairing'>
+8.3 Many-to-one Profile Pairing
+</a>
+</li>
+
+<li class='navbar-v2web dropdown'>
+<a href='Pairing-Sender-and-Receiver-Profile-for-Use-.html#8-4-Design-Considerations--Profiling-Pairing'>
+8.4 Design Considerations: Profiling Pairing
+</a>
+</li>
+
+</ul>
+</li>
+
+<li class='navbar-v2web dropdown-submenu'>
+<a href='Profile-Documentation.html'>
+9 Profile Documentation
+</a>
+<ul class='dropdown-menu'>
+<li class='navbar-v2web dropdown'>
+<a href='Profile-Documentation.html#9-1-Profile-and-Implementation-Relationships'>
+9.1 Profile and Implementation Relationships
+</a>
+</li>
+
+<li class='navbar-v2web dropdown'>
+<a href='Profile-Documentation.html#9-2-Documentation-Quality'>
+9.2 Documentation Quality
+</a>
+</li>
+
+</ul>
+</li>
+
+<li class='navbar-v2web dropdown-submenu'>
+<a href='Computable-Document-Definitions.html'>
+10 Computable Document Definitions
+</a>
+<ul class='dropdown-menu'>
+<li class='navbar-v2web dropdown'>
+<a href='Computable-Document-Definitions.html#10-1-Document-Definitions-Layout'>
+10.1 Document Definitions Layout
+</a>
+</li>
+
+<li class='navbar-v2web dropdown'>
+<a href='Computable-Document-Definitions.html#10-2-Meta-Data'>
+10.2 Meta Data
+</a>
+</li>
+
+</ul>
+</li>
+
+<li class='navbar-v2web dropdown'>
+<a href='Glossary.html'>
+11 Glossary
+</a>
+</li>
+
+<li class='navbar-v2web dropdown-submenu'>
+<a href='Appendix-A-Predicate-Definition-Language.html'>
+12 Appendix A: Predicate Definition Language
+</a>
+<ul class='dropdown-menu'>
+<li class='navbar-v2web dropdown'>
+<a href='Appendix-A-Predicate-Definition-Language.html#12-1-IF-Statement'>
+12.1 IF Statement
+</a>
+</li>
+
+<li class='navbar-v2web dropdown'>
+<a href='Appendix-A-Predicate-Definition-Language.html#12-2-Occurrence-Declarative-Statement'>
+12.2 Occurrence-Declarative Statement
+</a>
+</li>
+
+<li class='navbar-v2web dropdown'>
+<a href='Appendix-A-Predicate-Definition-Language.html#12-3-Element-Location'>
+12.3 Element Location
+</a>
+</li>
+
+<li class='navbar-v2web dropdown'>
+<a href='Appendix-A-Predicate-Definition-Language.html#12-4-Context'>
+12.4 Context
+</a>
+</li>
+
+<li class='navbar-v2web dropdown'>
+<a href='Appendix-A-Predicate-Definition-Language.html#12-5-Verbs'>
+12.5 Verbs
+</a>
+</li>
+
+<li class='navbar-v2web dropdown'>
+<a href='Appendix-A-Predicate-Definition-Language.html#12-6-Content-Declarative-Statements'>
+12.6 Content-Declarative Statements
+</a>
+</li>
+
+<li class='navbar-v2web dropdown'>
+<a href='Appendix-A-Predicate-Definition-Language.html#12-7-Comparison-Content-Declarative-Statement'>
+12.7 Comparison-Content Declarative Statement
+</a>
+</li>
+
+<li class='navbar-v2web dropdown'>
+<a href='Appendix-A-Predicate-Definition-Language.html#12-8-Complex-Condition-Predicates'>
+12.8 Complex Condition Predicates
+</a>
+</li>
+
+</ul>
+</li>
+
+<li class='navbar-v2web dropdown-submenu'>
+<a href='Appendix-B-Conformance-Statement-Definition-Language.html'>
+13 Appendix B: Conformance Statement Definition Language
+</a>
+<ul class='dropdown-menu'>
+<li class='navbar-v2web dropdown'>
+<a href='Appendix-B-Conformance-Statement-Definition-Language.html#13-1-Element-Location'>
+13.1 Element Location
+</a>
+</li>
+
+<li class='navbar-v2web dropdown'>
+<a href='Appendix-B-Conformance-Statement-Definition-Language.html#13-2-Propositions'>
+13.2 Propositions
+</a>
+</li>
+
+<li class='navbar-v2web dropdown'>
+<a href='Appendix-B-Conformance-Statement-Definition-Language.html#13-3-Occurrence-Declarative-Statement'>
+13.3 Occurrence-Declarative Statement
+</a>
+</li>
+
+<li class='navbar-v2web dropdown'>
+<a href='Appendix-B-Conformance-Statement-Definition-Language.html#13-4-Context'>
+13.4 Context
+</a>
+</li>
+
+<li class='navbar-v2web dropdown'>
+<a href='Appendix-B-Conformance-Statement-Definition-Language.html#13-5-Verbs'>
+13.5 Verbs
+</a>
+</li>
+
+<li class='navbar-v2web dropdown'>
+<a href='Appendix-B-Conformance-Statement-Definition-Language.html#13-6-Content-Declarative-Statement'>
+13.6 Content-Declarative Statement
+</a>
+</li>
+
+<li class='navbar-v2web dropdown'>
+<a href='Appendix-B-Conformance-Statement-Definition-Language.html#13-7-Comparison-Content-Declarative-Statement'>
+13.7 Comparison-Content Declarative Statement
+</a>
+</li>
+
+<li class='navbar-v2web dropdown'>
+<a href='Appendix-B-Conformance-Statement-Definition-Language.html#13-8-Complex-Conformance-Statements'>
+13.8 Complex Conformance Statements
+</a>
+</li>
+
+<li class='navbar-v2web dropdown'>
+<a href='Appendix-B-Conformance-Statement-Definition-Language.html#13-9-Free-Text-Conformance-Statements'>
+13.9 Free-Text Conformance Statements
+</a>
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li class='navbar-v2web'>
+<a href='toc.html'>Table of Contents</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class='container'>
+<div id='v2draft'>
+<h1>
+Draft Website - For Review Purposes Only
+</h1>
+</div>
+</div>
+</div>
+<!-- #segment-breadcrumb.segment -->
+<!-- .container -->
+<!-- %ul.breadcrumb -->
+<!-- %li -->
+<!-- %b -->
+<!-- %a{:href => homepage_url} Home -->
+</nav>
+<div class='container'>
+<h1 class='self-link-parent'>
+<span class='sectioncount'>11</span>
+Glossary
+</h1>
+
+<div class='id_anchor' id='v2web_table-1428'></div>
+<table class='center striped-rows table_v2web' style='width: 99.89%;'>
+<colgroup>
+<col span='1' style='width: 22.56%;'>
+<col span='1' style='width: 18.56%;'>
+<col span='1' style='width: 58.86%;'>
+</colgroup>
+<thead>
+<tr class='tr_v2web' style=''>
+<th class='emphasis-header table_v2web'>
+<p class='p_v2web' style=''>
+<strong>Term</strong>
+</p>
+
+</th>
+
+<th class='emphasis-header table_v2web'>
+<p class='p_v2web' style=''>
+<strong>Context</strong>
+</p>
+
+</th>
+
+<th class='emphasis-header table_v2web'>
+<p class='p_v2web' style=''>
+<strong>Definition</strong>
+</p>
+
+</th>
+
+</tr>
+
+</thead>
+<tbody>
+<tr class='tr_v2web' style=''>
+<td class='bold color-pot-pourri table_v2web'>
+<p class='p_v2web' style=''>
+<strong>Accept Acknowledgement</strong>
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+Messaging
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+The acknowledgement message that is sent by the receiving system when the message is successfully received, indicating whether the received interaction can or cannot be accepted for further processing.
+</p>
+
+</td>
+
+</tr>
+
+<tr class='tr_v2web' style=''>
+<td class='bold color-pot-pourri table_v2web'>
+<p class='p_v2web' style=''>
+<strong>Actor</strong>
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+Use Case
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+An information system or a component of an information system that produces, manages, or acts on information associated with operational activities in an organization; has a specific role, performs specific functions, and is defined in an abstract manner. Actors exchange information through standard HL7 v2 messages and can be an initiator or a responder.
+</p>
+
+</td>
+
+</tr>
+
+<tr class='tr_v2web' style=''>
+<td class='bold color-pot-pourri table_v2web'>
+<p class='p_v2web' style=''>
+<strong>Adopted</strong><strong> Object</strong>
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+Selective Adoption
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+An object from another version of the standard that is imported into a message profile.
+</p>
+
+</td>
+
+</tr>
+
+<tr class='tr_v2web' style=''>
+<td class='bold color-pot-pourri table_v2web'>
+<p class='p_v2web' style=''>
+<strong>Adopted</strong><strong> Version</strong>
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+Selective Adoption
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+The HL7 v2 version from which an object was adopted.
+</p>
+
+</td>
+
+</tr>
+
+<tr class='tr_v2web' style=''>
+<td class='bold color-pot-pourri table_v2web'>
+<p class='p_v2web' style=''>
+<strong>Annotation</strong>
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+Constraint Type
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+Descriptive text that accompanies a standard element definition or concept and provides additional information pertaining to the use of the element (i.e., it is an elaboration of the concept as it relates to the use case to which it is being applied); may be associated at any defined element level in a message profile (e.g., a field).
+</p>
+
+</td>
+
+</tr>
+
+<tr class='tr_v2web' style=''>
+<td class='bold color-pot-pourri table_v2web'>
+<p class='p_v2web' style=''>
+<strong>Application Acknowledgement</strong>
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+Messaging
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+The acknowledgement message that is sent by the receiving system after the message is successfully and functionally processed by the receiving system.
+</p>
+
+</td>
+
+</tr>
+
+<tr class='tr_v2web' style=''>
+<td class='bold color-pot-pourri table_v2web'>
+<p class='p_v2web' style=''>
+<strong>Base Data Type</strong>
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+Slicing
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+The HL7 base data type for the field as defined in Chapter 2 of the base standard. The default data type and all the data type flavors associated with that field must derive from the base data type.
+</p>
+
+</td>
+
+</tr>
+
+<tr class='tr_v2web' style=''>
+<td class='bold color-pot-pourri table_v2web'>
+<p class='p_v2web' style=''>
+<strong>Base Standard</strong>
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+Standards Development
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+The base HL7 v2 standard.
+</p>
+
+</td>
+
+</tr>
+
+<tr class='tr_v2web' style=''>
+<td class='bold color-pot-pourri table_v2web'>
+<p class='p_v2web' style=''>
+<strong>Binding</strong>
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+Vocabulary Constraints
+</p>
+
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+The association of a coded data element to a vocabulary. Depending on the level of the specification, the binding can be to a concept domain, code system, or value set. The HL7 v2 tables can represent any of these three vocabulary types depending on how the table is defined and used. At each specification (profile) level, the binding becomes increasingly specific, refining the data semantics of the element by limiting the vocabulary&#8217;s content to a particular set of coded values.
+</p>
+
+</td>
+
+</tr>
+
+<tr class='tr_v2web' style=''>
+<td class='bold color-pot-pourri table_v2web'>
+<p class='p_v2web' style=''>
+<strong>Binding Parameters</strong>
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+Vocabulary Constraints
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+Define allowable options for code set modifications in derived profiles. Binding parameters include <strong>extensibility</strong> and <strong>stability</strong>.
+</p>
+
+</td>
+
+</tr>
+
+<tr class='tr_v2web' style=''>
+<td class='bold color-pot-pourri table_v2web'>
+<p class='p_v2web' style=''>
+<strong>Binding Strength</strong>
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+Vocabulary Constraints
+</p>
+
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+Indicates the conformance of the binding, that is, whether the vocabulary must be used or not. There are two possible values: Required (R) and Suggested (S) (Recommended). All bindings are eventually required in implementations, and a suggested binding can be specified in a constrainable profile (i.e., the specification needs to be further constrained before implementation).
+</p>
+
+</td>
+
+</tr>
+
+<tr class='tr_v2web' style=''>
+<td class='bold color-pot-pourri table_v2web'>
+<p class='p_v2web' style=''>
+<strong>C</strong><strong>ardinality</strong>
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+Constraint Type
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+Indicates the number of occurrences for an element by specifying the minimum and maximum bounds.
+</p>
+
+</td>
+
+</tr>
+
+<tr class='tr_v2web' style=''>
+<td class='bold color-pot-pourri table_v2web'>
+<p class='p_v2web' style=''>
+<strong>Co-Constraint</strong>
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+Constraint Type
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+A rule (constraint) used to express dependencies among a set of data values.
+</p>
+
+</td>
+
+</tr>
+
+<tr class='tr_v2web' style=''>
+<td class='bold color-pot-pourri table_v2web'>
+<p class='p_v2web' style=''>
+<strong>Coded Data Element</strong>
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+Vocabulary Constraints
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+An element with a data type definition that supports coded concepts. Examples include IS, ID, CE, CWE, and CNE and any data type flavors of coded data type definitions (e.g., CWE_01).
+</p>
+
+</td>
+
+</tr>
+
+<tr class='tr_v2web' style=''>
+<td class='bold color-pot-pourri table_v2web'>
+<p class='p_v2web' style=''>
+<strong>Code System</strong>
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+Vocabulary Constraints
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+A managed collection of codes that represent concepts used in a particular business or technical area; often there are relationships between the coded concepts.
+</p>
+
+</td>
+
+</tr>
+
+<tr class='tr_v2web' style=''>
+<td class='bold color-pot-pourri table_v2web'>
+<p class='p_v2web' style=''>
+<strong>Compatibility</strong>
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+Standards Development and Implementation
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+Declaration as to whether two specifications define sets of requirements that are harmonized with each other, allowing systems that implement them to work together, i.e., interoperate.
+</p>
+
+</td>
+
+</tr>
+
+<tr class='tr_v2web' style=''>
+<td class='bold color-pot-pourri table_v2web'>
+<p class='p_v2web' style=''>
+<strong>Compliance</strong>
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+Standards Development and Implementation
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+The degree to which a derived specification adheres to the requirements defined in the foundational specification (standard), i.e., follows the rules for adding constraints. Example of a usage compliance rule: a &ldquo;required&rdquo; element must remain &ldquo;required&rdquo; in any derived specifications (profiles).
+</p>
+
+</td>
+
+</tr>
+
+<tr class='tr_v2web' style=''>
+<td class='bold color-pot-pourri table_v2web'>
+<p class='p_v2web' style=''>
+<strong>Composite Data Type</strong>
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+Structure Definition
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+A data type that contains more than one element, which can be another composite data type or be a primitive data type. Also referred to as complex data type.
+</p>
+
+</td>
+
+</tr>
+
+<tr class='tr_v2web' style=''>
+<td class='bold color-pot-pourri table_v2web'>
+<p class='p_v2web' style=''>
+<strong>Composite Profile </strong>
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+Profile Construction
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+A profile created by combining a core profile component and one or more profile components.
+</p>
+
+</td>
+
+</tr>
+
+<tr class='tr_v2web' style=''>
+<td class='bold color-pot-pourri table_v2web'>
+<p class='p_v2web' style=''>
+<strong>Concept Domain</strong>
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+Vocabulary Constraints
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+An abstract notion that refers to a set of related ideas (concepts) that serve to help define the meaning of a particular data element (over and above just the name of the data element).
+</p>
+
+</td>
+
+</tr>
+
+<tr class='tr_v2web' style=''>
+<td class='bold color-pot-pourri table_v2web'>
+<p class='p_v2web' style=''>
+<strong>Conformance</strong>
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+Standards Development and Implementation
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+The relationship between a specification and an implementation; is an indication of how closely the software implements the requirements stated in the specification. An objective measure of how closely an implementation satisfies the stated requirements; is associated with the utilization of formal testing to verify adherence to the standard.
+</p>
+
+</td>
+
+</tr>
+
+<tr class='tr_v2web' style=''>
+<td class='bold color-pot-pourri table_v2web'>
+<p class='p_v2web' style=''>
+<strong>Conformance </strong><strong>Clause</strong>
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+Implementation Guides
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+Defines the requirements, criteria, or conditions that must be satisfied by an implementation to claim conformance to the specification. The conformance clause identifies what must conform and how conformance can be met. This information typically is provided via a list of profiles or use cases that contain the profiles.
+</p>
+
+</td>
+
+</tr>
+
+<tr class='tr_v2web' style=''>
+<td class='bold color-pot-pourri table_v2web'>
+<p class='p_v2web' style=''>
+<strong>Conformance</strong><strong> Constructs</strong>
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+Constraints
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+The key mechanisms for profiling; include usage, cardinality, data type, vocabulary, length, content, slicing, conformance statements, co-constraint, and semantic refinement.
+</p>
+
+</td>
+
+</tr>
+
+<tr class='tr_v2web' style=''>
+<td class='bold color-pot-pourri table_v2web'>
+<p class='p_v2web' style=''>
+<strong>Conformance Length</strong>
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+Constraint Type
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+The minimum for a maximum Length; sets the minimum number of characters that an implementation must support for an element.
+</p>
+
+</td>
+
+</tr>
+
+<tr class='tr_v2web' style=''>
+<td class='bold color-pot-pourri table_v2web'>
+<p class='p_v2web' style=''>
+<strong>Conformance Statement</strong>
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+Constraint Type
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+An explicit declaration conveyed in text or as a testable expression that defines a constraint.
+</p>
+
+</td>
+
+</tr>
+
+<tr class='tr_v2web' style=''>
+<td class='bold color-pot-pourri table_v2web'>
+<p class='p_v2web' style=''>
+<strong>Constraint</strong>
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+Standards Development and Implementation
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+A rule that is applied to narrow or focus the use of an  element in accordance with a use case; is the central feature of the refinement process when creating profiles, as a constraint reduces the generality of the specification and focuses it on a particular requirement; enables implementers to understand how to use the various data structures and how to populate those structures with business-relevant information in accordance with the requirements detailed by the subject matter experts.
+</p>
+
+</td>
+
+</tr>
+
+<tr class='tr_v2web' style=''>
+<td class='bold color-pot-pourri table_v2web'>
+<p class='p_v2web' style=''>
+<strong>Content</strong>
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+Constraint Type
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+Defines the rules related to the data (value) for an element, such as a vocabulary, fixed value, or adherence to a format.
+</p>
+
+</td>
+
+</tr>
+
+<tr class='tr_v2web' style=''>
+<td class='bold color-pot-pourri table_v2web'>
+<p class='p_v2web' style=''>
+<strong>Constrainable Profile</strong>
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+Profile Levels
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+Is derived from either the standard profile or another constrainable profile. It further constrains the definition attributes in accordance with the profile compliance rules; for example, a U.S. state-level constrainable profile can be derived from a national-level profile by adding more constraints for a specific state.
+</p>
+
+</td>
+
+</tr>
+
+<tr class='tr_v2web' style=''>
+<td class='bold color-pot-pourri table_v2web'>
+<p class='p_v2web' style=''>
+<strong>Content Definition</strong>
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+Vocabulary Constraints
+</p>
+
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+Indicates the method used to expand a value set definition into a set of codes. An enumerated value set definition is called an <strong>Extensional</strong> definition. A value set definition that is (defined) expanded based on an algorithm is called an <strong>Intensional</strong> definition.
+</p>
+
+</td>
+
+</tr>
+
+<tr class='tr_v2web' style=''>
+<td class='bold color-pot-pourri table_v2web'>
+<p class='p_v2web' style=''>
+<strong>Core Profile </strong>
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+Profile Construction
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+Is a complete message definition but is not a complete set of constraints to satisfy a use case. A core profile is used to document the common set of requirements across a set of related profiles, with an explicit intent to be combined with one or more profile components.
+</p>
+
+</td>
+
+</tr>
+
+<tr class='tr_v2web' style=''>
+<td class='bold color-pot-pourri table_v2web'>
+<p class='p_v2web' style=''>
+<strong>Data Type</strong>
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+Structured Definition and Constraint Type
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+Defines the data element structure and, at the primitive level, the type of data it may contain. Constraints include type substitution and specialization (when combined with other constraint types).
+</p>
+
+</td>
+
+</tr>
+
+<tr class='tr_v2web' style=''>
+<td class='bold color-pot-pourri table_v2web'>
+<p class='p_v2web' style=''>
+<strong>Data Type Flavor</strong>
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+Constraint Type
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+The mechanism for building on a data type for constraining components and sub-components; a specialization on a base data type.
+</p>
+
+</td>
+
+</tr>
+
+<tr class='tr_v2web' style=''>
+<td class='bold color-pot-pourri table_v2web'>
+<p class='p_v2web' style=''>
+<strong>Derived Profile</strong>
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+Implementation Guides
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+A &ldquo;new&rdquo; profile that is created and based on another profile. Profiling is an iterative process in which more detail is provided in each derived specification.
+</p>
+
+</td>
+
+</tr>
+
+<tr class='tr_v2web' style=''>
+<td class='bold color-pot-pourri table_v2web'>
+<p class='p_v2web' style=''>
+<strong>Discriminator Position</strong>
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+Slicing
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+The location of the discriminator element(s). The path is relative to the base datatype. All occurrences of the field have the same discriminator position. Discriminator position can be one or more elements (e.g., PID-11.6 (Country) and PID-11.7 (Address Type)).
+</p>
+
+</td>
+
+</tr>
+
+<tr class='tr_v2web' style=''>
+<td class='bold color-pot-pourri table_v2web'>
+<p class='p_v2web' style=''>
+<strong>Discriminator Value</strong>
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+Slicing
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+The content of the discriminator element. For a fixed value, the evaluation is based on a literal value. For exists, the evaluation is based on Boolean logic. For pattern, the evaluation is based on a regex (regular expression).
+</p>
+
+</td>
+
+</tr>
+
+<tr class='tr_v2web' style=''>
+<td class='bold color-pot-pourri table_v2web'>
+<p class='p_v2web' style=''>
+<strong>Empty Value</strong>
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+Messaging
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+An element lacking content. Indicated in er7 (encoding rules 7) format for a field as ||.
+</p>
+
+</td>
+
+</tr>
+
+<tr class='tr_v2web' style=''>
+<td class='bold color-pot-pourri table_v2web'>
+<p class='p_v2web' style=''>
+<strong>Exception</strong>
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+Messaging
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+Is a general term to indicate that a conformance violation has occurred. The response to an exception is context dependent.
+</p>
+
+</td>
+
+</tr>
+
+<tr class='tr_v2web' style=''>
+<td class='bold color-pot-pourri table_v2web'>
+<p class='p_v2web' style=''>
+<strong>Extensibility</strong>
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+Vocabulary Profiling Mechanics
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+Indicates whether the value set definition can be extended (added to) or not in a derived (profiled) version of the specification. Extensibility can be either Open or Closed.
+</p>
+
+</td>
+
+</tr>
+
+<tr class='tr_v2web' style=''>
+<td class='bold color-pot-pourri table_v2web'>
+<p class='p_v2web' style=''>
+<strong>Extensional Definition</strong>
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+Vocabulary Constraints
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+In Content Definition, is an enumerated value set definition.
+</p>
+
+</td>
+
+</tr>
+
+<tr class='tr_v2web' style=''>
+<td class='bold color-pot-pourri table_v2web'>
+<p class='p_v2web' style=''>
+<strong>External Table</strong>
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+Vocabulary Constraints
+</p>
+
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+A vocabulary definition created, maintained, and published by another standards organization. A specifier may reference an external table (code system) and bind that table to a data element in a message profile.
+</p>
+
+</td>
+
+</tr>
+
+<tr class='tr_v2web' style=''>
+<td class='bold color-pot-pourri table_v2web'>
+<p class='p_v2web' style=''>
+<strong>Fixed Value</strong>
+</p>
+
+<p class='p_v2web' style=''>
+<strong>(Constant)</strong>
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+Constraint Type
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+Constrains the content to a single value, e.g., &ldquo;A08&rdquo; that indicates an update event type in ADT messages.
+</p>
+
+</td>
+
+</tr>
+
+<tr class='tr_v2web' style=''>
+<td class='bold color-pot-pourri table_v2web'>
+<p class='p_v2web' style=''>
+<strong>Foundational Version</strong>
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+Selective Adoption
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+The version of the base standard that serves as the core (starting) version of the message definition. All objects in the message profile will comply to this version unless explicitly overridden by an adopted object.
+</p>
+
+</td>
+
+</tr>
+
+<tr class='tr_v2web' style=''>
+<td class='bold color-pot-pourri table_v2web'>
+<p class='p_v2web' style=''>
+<strong>HL7-Defined Table</strong>
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+Vocabulary Constraints
+</p>
+
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+Provides an initial table identifier, code values, and certain base standard requirements. Code values defined in an HL7 table must not be redefined in a message profile; and if a concept needed for a use case is not defined, the table definition can be extended.
+</p>
+
+</td>
+
+</tr>
+
+<tr class='tr_v2web' style=''>
+<td class='bold color-pot-pourri table_v2web'>
+<p class='p_v2web' style=''>
+<strong>Implementation</strong><strong> Profile</strong>
+</p>
+
+<p class='p_v2web' style=''>
+<strong>(Implementable Profile)</strong>
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+Profile Levels
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+Defines all elements such that all optionality and openness have been removed; typically, is derived from a constrainable profile, but it may be derived by further constraining another implementable profile.
+</p>
+
+<p class='p_v2web' style=''>
+All interfaces deployed in a production setting are implementable profiles whether they are documented (explicitly stated) or not documented (implicitly stated).
+</p>
+
+</td>
+
+</tr>
+
+<tr class='tr_v2web' style=''>
+<td class='bold color-pot-pourri table_v2web'>
+<p class='p_v2web' style=''>
+<strong>Implementation Tolerance</strong>
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+Vocabulary Constraints
+</p>
+
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+Allows for unknown (undocumented) codes to be exchanged at runtime with impunity, because the complete code set is not known to the implementers. For a binding that supports implementation tolerance, an implementation must process unknown codes without raising an exception.
+</p>
+
+</td>
+
+</tr>
+
+<tr class='tr_v2web' style=''>
+<td class='bold color-pot-pourri table_v2web'>
+<p class='p_v2web' style=''>
+<strong>Indigenous Object</strong>
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+Selective Adoption
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+An object from the foundational version of the message profile. Indigenous objects do not have an explicit version attribute. The version of the object is the version of the Foundational Version.
+</p>
+
+</td>
+
+</tr>
+
+<tr class='tr_v2web' style=''>
+<td class='bold color-pot-pourri table_v2web'>
+<p class='p_v2web' style=''>
+<strong>Initiator</strong>
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+Use Case
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+An entity (actor) that starts an action; is also referred to as a <strong>Sender</strong><strong>, Producer,</strong> or <strong>Client</strong>.
+</p>
+
+</td>
+
+</tr>
+
+<tr class='tr_v2web' style=''>
+<td class='bold color-pot-pourri table_v2web'>
+<p class='p_v2web' style=''>
+<strong>Intensional</strong><strong> Definition</strong>
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+Vocabulary Constraints
+</p>
+
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+In Content Definition, is a means used to expand a value set definition into a set of codes include using regular expressions, characterizing specific attributes for a specific code system (e.g., all laboratory codes in LOINC), or using hierarchical associations that include all specializations of the codes in question.
+</p>
+
+</td>
+
+</tr>
+
+<tr class='tr_v2web' style=''>
+<td class='bold color-pot-pourri table_v2web'>
+<p class='p_v2web' style=''>
+<strong>Interaction</strong>
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+Messaging
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+A conversation in which two systems or applications (generically called Actors) exchange data.
+</p>
+
+</td>
+
+</tr>
+
+<tr class='tr_v2web' style=''>
+<td class='bold color-pot-pourri table_v2web'>
+<p class='p_v2web' style=''>
+<strong>Interoperability</strong>
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+Standards Development and Implementation
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+The ability of implementations to exchange data and to use that data as intended to accomplish a desired task.
+</p>
+
+</td>
+
+</tr>
+
+<tr class='tr_v2web' style=''>
+<td class='bold color-pot-pourri table_v2web'>
+<p class='p_v2web' style=''>
+<strong>Known Data</strong>
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+Usage
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+Content that exists and is available for a given element.
+</p>
+
+</td>
+
+</tr>
+
+<tr class='tr_v2web' style=''>
+<td class='bold color-pot-pourri table_v2web'>
+<p class='p_v2web' style=''>
+<strong>Length</strong>
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+Constraint Type
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+Defines the number of characters that may be present in one occurrence of an element. Can specify a maximum limit or both the minimum and maximum bounds.
+</p>
+
+</td>
+
+</tr>
+
+<tr class='tr_v2web' style=''>
+<td class='bold color-pot-pourri table_v2web'>
+<p class='p_v2web' style=''>
+<strong>Local Table</strong>
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+Vocabulary Constraints
+</p>
+
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+A table with a non-HL7 assigned table-identifier that contains a set of locally or site-defined values. Local tables typically are used for elements with a CWE data type. During the process of profiling, a specifier will create and bind local tables.
+</p>
+
+</td>
+
+</tr>
+
+<tr class='tr_v2web' style=''>
+<td class='bold color-pot-pourri table_v2web'>
+<p class='p_v2web' style=''>
+<strong>Non-empty Value</strong>
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+Usage
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+A value in which at least one character is a non-whitespace character. Two double quotes (&quot;&quot;), which represents a &ldquo;delete indicator&rdquo;, qualifies as a non-empty value.
+</p>
+
+</td>
+
+</tr>
+
+<tr class='tr_v2web' style=''>
+<td class='bold color-pot-pourri table_v2web'>
+<p class='p_v2web' style=''>
+<strong>Null Flavor (Null Value)</strong>
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+Messaging
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+A concept for representing &ldquo;unknown&rdquo; content. HL7 v2 does not explicitly provide a mechanism for null flavors; however, an equivalent outcome can be achieved for coded data elements by including a null flavor coded value in a value set.
+</p>
+
+</td>
+
+</tr>
+
+<tr class='tr_v2web' style=''>
+<td class='bold color-pot-pourri table_v2web'>
+<p class='p_v2web' style=''>
+<strong>Object</strong>
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+Selective Adoption
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+An object from the HL7 v2 standard; can be any element (group, segment, field), data type, or table.
+</p>
+
+</td>
+
+</tr>
+
+<tr class='tr_v2web' style=''>
+<td class='bold color-pot-pourri table_v2web'>
+<p class='p_v2web' style=''>
+<strong>Optionality</strong>
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+Constraint Type
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+An attribute that is used to define the presence of an element in a message definition. The openness permitted for an element; through the application of conformance rules to the base standard, the openness permitted by the base standard is restricted. Sometimes used interchangeably with &ldquo;usage&rdquo;.
+</p>
+
+</td>
+
+</tr>
+
+<tr class='tr_v2web' style=''>
+<td class='bold color-pot-pourri table_v2web'>
+<p class='p_v2web' style=''>
+<strong>Pattern Restricted Value</strong>
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+Constraint Type
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+A value that constrains the content of the element based on the specified pattern matching algorithm (e.g., a Medical Record Number format). A pattern-restricted value is specified using the conformance statement mechanism.
+</p>
+
+</td>
+
+</tr>
+
+<tr class='tr_v2web' style=''>
+<td class='bold color-pot-pourri table_v2web'>
+<p class='p_v2web' style=''>
+<strong>Process</strong>
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+Usage
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+A general term to indicate that an action must be performed; is an important concept for understanding receiver side requirements. Message usage requirements alone cannot fully indicate the scope of processing requirements. Additional functional requirements for how data elements should be process can be defined.
+</p>
+
+</td>
+
+</tr>
+
+<tr class='tr_v2web' style=''>
+<td class='bold color-pot-pourri table_v2web'>
+<p class='p_v2web' style=''>
+<strong>Profile Component</strong>
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+Profile Construction
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+Defines a part or a certain aspect of a profile; is used to aggregate correlated requirements and/or to differentiate requirements from another profile or profile component; provides a mechanism to support a set of reusable requirements and can be applied to any construct or section of a profile. Profiles and profile components can be combined to develop and manage other profiles. A profile component in a family of profiles can be used to identify different levels of requirements for the same use case or to identify the differences in requirements for different, but closely related, use cases.
+</p>
+
+</td>
+
+</tr>
+
+<tr class='tr_v2web' style=''>
+<td class='bold color-pot-pourri table_v2web'>
+<p class='p_v2web' style=''>
+<strong>Profiling</strong>
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+Standards Development and Implementation
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+The process of placing additional constraints on a message definition in accordance with defined profiling compliance rules to meet requirements stated in a use case. The terms &ldquo;derived profile&rdquo; and, more generically, &ldquo;derived specification&rdquo; are used to denote a technical documentation that is based on another technical document. Profiling is an iterative process in which more detail is provided in each derived specification.
+</p>
+
+</td>
+
+</tr>
+
+<tr class='tr_v2web' style=''>
+<td class='bold color-pot-pourri table_v2web'>
+<p class='p_v2web' style=''>
+<strong>Message Profile</strong>
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+Profile Construction
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+A complete message structure definition with additional constraints applied to it.
+</p>
+
+</td>
+
+</tr>
+
+<tr class='tr_v2web' style=''>
+<td class='bold color-pot-pourri table_v2web'>
+<p class='p_v2web' style=''>
+<strong>Message Interaction</strong>
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+Implementation Guides
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+The process by which a message is sent from a Sender application to a Receiver application.
+</p>
+
+</td>
+
+</tr>
+
+<tr class='tr_v2web' style=''>
+<td class='bold color-pot-pourri table_v2web'>
+<p class='p_v2web' style=''>
+<strong>Message Transaction</strong>
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+Implementation Guides
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+The process by which a message is sent from a Sender application to a Receiver application and one or more response(s) is sent from the Receiver application back to the Sender application.
+</p>
+
+</td>
+
+</tr>
+
+<tr class='tr_v2web' style=''>
+<td class='bold color-pot-pourri table_v2web'>
+<p class='p_v2web' style=''>
+<strong>Responder</strong>
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+Use Case
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+An entity (actor) that is reacting to the action of the Initiator; is also referred to as a <strong>Receiver</strong><strong>, Consumer,</strong> or <strong>Server</strong>.
+</p>
+
+</td>
+
+</tr>
+
+<tr class='tr_v2web' style=''>
+<td class='bold color-pot-pourri table_v2web'>
+<p class='p_v2web' style=''>
+<strong>Semantic Refinement</strong>
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+Constraint Type
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+Allows for refinement of the semantics of a data element based on the use case.
+</p>
+
+</td>
+
+</tr>
+
+<tr class='tr_v2web' style=''>
+<td class='bold color-pot-pourri table_v2web'>
+<p class='p_v2web' style=''>
+<strong>Single Code Element Binding</strong>
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+Vocabulary Constraints
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+A vocabulary binding in which the binding to an element is to a single value selected from a vocabulary definition.
+</p>
+
+</td>
+
+</tr>
+
+<tr class='tr_v2web' style=''>
+<td class='bold color-pot-pourri table_v2web'>
+<p class='p_v2web' style=''>
+<strong>Slice Min</strong>
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+Slicing
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+An attribute that determines the minimum number of occurrences that must contain &quot;discriminator value&quot; and, therefore, conform to &ldquo;slice data type flavor&rdquo;.
+</p>
+
+</td>
+
+</tr>
+
+<tr class='tr_v2web' style=''>
+<td class='bold color-pot-pourri table_v2web'>
+<p class='p_v2web' style=''>
+<strong>Slice Max</strong>
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+Slicing
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+An attribute that determines the maximum number of occurrences that must contain &quot;discriminator value&quot; and, therefore, conform to &ldquo;slice data type flavor&rdquo;.
+</p>
+
+</td>
+
+</tr>
+
+<tr class='tr_v2web' style=''>
+<td class='bold color-pot-pourri table_v2web'>
+<p class='p_v2web' style=''>
+<strong>Slicing</strong>
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+Constraint Type
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+Defines a set of different constraints that are possible for a field instance (occurrence).
+</p>
+
+</td>
+
+</tr>
+
+<tr class='tr_v2web' style=''>
+<td class='bold color-pot-pourri table_v2web'>
+<p class='p_v2web' style=''>
+<strong>Specifier</strong>
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+Standards Developer
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+A person who is creating the implementation guide or message profile.
+</p>
+
+</td>
+
+</tr>
+
+<tr class='tr_v2web' style=''>
+<td class='bold color-pot-pourri table_v2web'>
+<p class='p_v2web' style=''>
+<strong>Stability</strong>
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+Vocabulary Profiling Mechanics
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+Indicates whether the content of a value set might change (often the value set is dependent on an external code system that may be updated or replaced after publication of the interoperability specification). Stability can be Static and Dynamic.
+</p>
+
+</td>
+
+</tr>
+
+<tr class='tr_v2web' style=''>
+<td class='bold color-pot-pourri table_v2web'>
+<p class='p_v2web' style=''>
+<strong>Standard Profile</strong>
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+Profile Levels
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+Represents the base standard definitions and constraints as-is and establishes the framework for a specific type of event (e.g., an unsolicited vaccination record update &ndash; VXU V04 message event). At this level, the overall structure (&ldquo;template&rdquo;), including the data type definitions, is established; however, the full declaration of requirements has yet to be specified, and, therefore, considerable openness still exists. Additional profiles are subsequently derived from the standard profile.
+</p>
+
+</td>
+
+</tr>
+
+<tr class='tr_v2web' style=''>
+<td class='bold color-pot-pourri table_v2web'>
+<p class='p_v2web' style=''>
+<strong>Table</strong>
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+Vocabulary Constraints
+</p>
+
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+An HL7 v2 vocabulary mechanism to define coded concepts. A pre-defined table has an identifier and may contain codes; sometimes acts like a code system, value set, and/or a concept domain depending on how it is defined and used. Tables in HL7 v2 have two types: HL7 Table and User Table.
+</p>
+
+</td>
+
+</tr>
+
+<tr class='tr_v2web' style=''>
+<td class='bold color-pot-pourri table_v2web'>
+<p class='p_v2web' style=''>
+<strong>T</strong><strong>ransaction</strong>
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+Messaging
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+A sequence of events comprising a roundtrip conversation.
+</p>
+
+</td>
+
+</tr>
+
+<tr class='tr_v2web' style=''>
+<td class='bold color-pot-pourri table_v2web'>
+<p class='p_v2web' style=''>
+<strong>Usage</strong>
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+Constraint Type
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+Indicates requirements for the presence (appearance) of an element in a message instance, governing the expected behavior of the sending application and the receiving application with respect to the element. Determines, from an implementation perspective, whether an element must be supported. From an operational perspective, usage determines whether the element must be present, can be present, or must not be present in a message instance for the sender; and for the receiver it influences the processing of the element. Sometimes used interchangeably with &ldquo;optionality&rdquo;.
+</p>
+
+</td>
+
+</tr>
+
+<tr class='tr_v2web' style=''>
+<td class='bold color-pot-pourri table_v2web'>
+<p class='p_v2web' style=''>
+<strong>Use Case</strong>
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+Standards Development
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+Describes a system capability and the associated sequences of actions that a system performs to achieve an intended outcome; can include the actors involved, the interactions (including the message exchanges) between the actors, system functional requirements, acknowledgement requirements, and any other pertinent information that aids in the understanding of an implementer, such as example messages or message excerpts.
+</p>
+
+<p class='p_v2web' style=''>
+Can be considered a container that organizes the pieces needed to specify a system capability.
+</p>
+
+</td>
+
+</tr>
+
+<tr class='tr_v2web' style=''>
+<td class='bold color-pot-pourri table_v2web'>
+<p class='p_v2web' style=''>
+<strong>User-Defined Table</strong>
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+Vocabulary Constraints
+</p>
+
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+Provides an initial table identifier and, in some cases, suggested code values; are recommendations and, therefore, place no initial requirements on the vocabulary definition. In a message profile, a specifier may use, extend, modify, or replace the suggested codes and descriptions.
+</p>
+
+</td>
+
+</tr>
+
+<tr class='tr_v2web' style=''>
+<td class='bold color-pot-pourri table_v2web'>
+<p class='p_v2web' style=''>
+<strong>Value (verb)</strong>
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+Messaging
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+To place a non-empty value (noun) in an element location.
+</p>
+
+</td>
+
+</tr>
+
+<tr class='tr_v2web' style=''>
+<td class='bold color-pot-pourri table_v2web'>
+<p class='p_v2web' style=''>
+<strong>V</strong><strong>alue Set</strong>
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+Vocabulary Constraints
+</p>
+
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+The collection of codes that may be used to populate an element in a message instance; the codes usually are targeted for a specific use.
+</p>
+
+<p class='p_v2web' style=''>
+A value set draws codes from one (usually) or more code systems; the result is a set of codes that constrains the possible content of a data element. A key distinction between a value set and a code system is that a code system is used as a reference source of coded meaning, whereas a value set is a specific constraint for a set of explicit business uses.
+</p>
+
+</td>
+
+</tr>
+
+<tr class='tr_v2web' style=''>
+<td class='bold color-pot-pourri table_v2web'>
+<p class='p_v2web' style=''>
+<strong>Value Set Binding</strong>
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+Vocabulary Constraints
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+Refers to assigning a set of coded concepts to a particular data element in order to implement the concept domain associated with the data element.
+</p>
+
+</td>
+
+</tr>
+
+<tr class='tr_v2web' style=''>
+<td class='bold color-pot-pourri table_v2web'>
+<p class='p_v2web' style=''>
+<strong>Value Set Definition</strong>
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+Vocabulary Constraints
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+Provides meta data and the codes. The meta data includes the name of the value set, the identifier, and value set properties &#8216;extensibility&#8217; and &#8216;stability&#8217;.
+</p>
+
+</td>
+
+</tr>
+
+<tr class='tr_v2web' style=''>
+<td class='bold color-pot-pourri table_v2web'>
+<p class='p_v2web' style=''>
+<strong>Value Set Library</strong>
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+Vocabulary Constraints
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+Contains a collection of value set definitions existing in a single document (e.g., XML file) or artifact. The library is a convenient artifact for grouping and linking a set of value sets to a profile.
+</p>
+
+</td>
+
+</tr>
+
+<tr class='tr_v2web' style=''>
+<td class='bold color-pot-pourri table_v2web'>
+<p class='p_v2web' style=''>
+<strong>Vocabulary</strong>
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+Constraint Type
+</p>
+
+</td>
+
+<td class='table_v2web'>
+<p class='p_v2web' style=''>
+Defines the vocabulary binding and vocabulary definitions. Vocabulary indicates the allowable values (content) for a coded element. Vocabulary is a term used to convey the notions of concept domain, code system, and value set in a general sense.
+</p>
+
+</td>
+
+</tr>
+
+</tbody>
+</table>
+
+<p class='p_v2web' style=''>
+</p><p>
+</p>
+
+<script src='js/jquery.js'></script>
+<script src='js/jquery-ui.min.js'></script>
+<script src='js/bootstrap.min.js'></script>
+<script src='js/respond.min.js'></script>
+<!-- %script{:src => "js/fhir.js"} / This file was empty so not including it -->
+<script src='js/codemirror/codemirror.js'></script>
+<script src='js/codemirror/mode/xml.js'></script>
+<script src='js/v2.js'></script>
+</div>
+<p></p>
+<div class='segment' id='segment-footer'>
+<div class='container'>
+<div class='inner-wrapper'>
+<p>
+&copy; HL7.org 2019+. HL7 v2+.
+</p>
+</div>
+</div>
+</div>
+</body>
+</html>

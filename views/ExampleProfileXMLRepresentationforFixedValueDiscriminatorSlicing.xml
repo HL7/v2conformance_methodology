@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Slicing SliceType="discriminatorFixed" DefaultDataType=“XAD_0">
+  <Slice Datatype=“XAD_1" Min=“1" Max=“1" >
+    <Discriminator Position=“7" Value=“H" />
+  </Slice>
+  <Slice Datatype=“XAD_2" Min=“0" Max=“*" >
+    <Discriminator Position=“7" Value=“M" />
+  </Slice>
+</Slicing>

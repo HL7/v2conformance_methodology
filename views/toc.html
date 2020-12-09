@@ -1,0 +1,1803 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta content='text/html; charset=windows-1252' http-equiv='Content-Type'>
+<title>
+HL7 - HL7v2 Conformance Methodology R1 N1 Publish - May 2020
+</title>
+<link href='images/hl7_favicon.ico' rel='shortcut icon' type='image/x-icon'>
+<style type='text/css'>
+<!-- @import './css/hl7.css'; -->
+<!-- @import './css/fhir.css'; -->
+<!-- @import './css/bootstrap.css'; -->
+<!-- @import './css/ bootstrap-v2_conformance.css'; -->
+<!-- @import './css/project.css'; -->
+<!-- @import './css/pygments-manni.css'; -->
+<!-- @import './css/jquery-ui.css'; -->
+<!-- @import './css/modules.css'; -->
+@import 'css/hl7.css';
+@import 'css/fhir.css';
+@import 'css/bootstrap.css';
+@import 'css/ bootstrap-v2_conformance.css';
+@import 'css/project.css';
+@import 'css/pygments-manni.css';
+@import 'css/jquery-ui.css';
+@import 'css/modules.css';
+@import 'css/codemirror.css';
+@import 'css/yamm.css';
+@import 'css/v2_conformance.css';
+</style>
+<meta content='(C) Health Level Seven, Int. 2020' name='COPYRIGHT'>
+<meta content='Michael Faughn' name='Developer'>
+</head>
+<body style='padding-top: 210px'>
+<nav class='navbar navbar-inverse navbar-fixed-top'>
+<div class='container'>
+<!-- HEADER CONTENT -->
+<div id='segment-header'>
+<div class='navbar-header'>
+<div class='container' style='padding-top:10px'>
+<a href='http://www.hl7.org/' id='logo' no-external='true'>
+<img alt='HL7 International' src='images/hl7-logo-header.png' width='120'>
+</a>
+<div id='hl7-nav'>
+<a href='http://v2.hl7.org/' id='hl7-logo' no-external='true'>
+<img alt='Visit the HL7 V2 website' height='50' src='images/HL7-v2-logo.png'>
+</a>
+</div>
+</div>
+</div>
+<button class='navbar-toggle' data-target='.navbar-inverse-collapse' data-toggle='collapse' type='button'></button>
+</div>
+<div id='stripe'></div>
+<div class='navbar-nav-box' id='segment-navbar'>
+<div class='container'>
+<div class='nav-collapse collapse navbar-inverse-collapse'>
+<ul class='nav navbar-nav'>
+<li class='navbar-v2web'>
+<a href='index.html'>V2 Conformance Home</a>
+</li>
+<li class='navbar-v2web dropdown'>
+<a class='dropdown-toggle' data-toggle='dropdown' href='#'>
+Sections
+<b class='caret'></b>
+</a>
+<ul class='dropdown-menu multi-level'>
+<li class='navbar-v2web dropdown-submenu'>
+<a href='Introduction.html'>
+1 Introduction
+</a>
+<ul class='dropdown-menu'>
+<li class='navbar-v2web dropdown'>
+<a href='Introduction.html#1-1-Purpose'>
+1.1 Purpose
+</a>
+</li>
+
+<li class='navbar-v2web dropdown'>
+<a href='Introduction.html#1-2-Conventions-and-Definitions'>
+1.2 Conventions and Definitions
+</a>
+</li>
+
+<li class='navbar-v2web dropdown'>
+<a href='Introduction.html#1-3-Concepts-and-their-Relationships'>
+1.3 Concepts and their Relationships
+</a>
+</li>
+
+<li class='navbar-v2web dropdown'>
+<a href='Introduction.html#1-4-Profiling-and-Profile-Construction-Overview'>
+1.4 Profiling and Profile Construction Overview
+</a>
+</li>
+
+<li class='navbar-v2web dropdown'>
+<a href='Introduction.html#1-5-Implementation-Guides-in-Context-of-Use'>
+1.5 Implementation Guides in Context of Use
+</a>
+</li>
+
+</ul>
+</li>
+
+<li class='navbar-v2web dropdown-submenu'>
+<a href='Profile-Levels.html'>
+2 Profile Levels
+</a>
+<ul class='dropdown-menu'>
+<li class='navbar-v2web dropdown'>
+<a href='Profile-Levels.html#2-1-Profiles-in-Use'>
+2.1 Profiles in Use
+</a>
+</li>
+
+</ul>
+</li>
+
+<li class='navbar-v2web dropdown-submenu'>
+<a href='HL7-v2-Implementation-Guides.html'>
+3 HL7 v2 Implementation Guides
+</a>
+<ul class='dropdown-menu'>
+<li class='navbar-v2web dropdown'>
+<a href='HL7-v2-Implementation-Guides.html#3-1-Background'>
+3.1 Background
+</a>
+</li>
+
+<li class='navbar-v2web dropdown'>
+<a href='HL7-v2-Implementation-Guides.html#3-2-Actors'>
+3.2 Actors
+</a>
+</li>
+
+<li class='navbar-v2web dropdown'>
+<a href='HL7-v2-Implementation-Guides.html#3-3-Use-Case'>
+3.3 Use Case
+</a>
+</li>
+
+<li class='navbar-v2web dropdown'>
+<a href='HL7-v2-Implementation-Guides.html#3-4-Messaging-Infrastructure'>
+3.4 Messaging Infrastructure
+</a>
+</li>
+
+<li class='navbar-v2web dropdown'>
+<a href='HL7-v2-Implementation-Guides.html#3-5-Other-Relevant-Information'>
+3.5 Other Relevant Information
+</a>
+</li>
+
+</ul>
+</li>
+
+<li class='navbar-v2web dropdown-submenu'>
+<a href='Message-Profiles.html'>
+4 Message Profiles
+</a>
+<ul class='dropdown-menu'>
+<li class='navbar-v2web dropdown'>
+<a href='Message-Profiles.html#4-1-Message-Profile-Identification'>
+4.1 Message Profile Identification
+</a>
+</li>
+
+<li class='navbar-v2web dropdown'>
+<a href='Message-Profiles.html#4-2-Message-Level-Profiling'>
+4.2 Message Level Profiling
+</a>
+</li>
+
+<li class='navbar-v2web dropdown'>
+<a href='Message-Profiles.html#4-3-Segment-Level-Profiling'>
+4.3 Segment Level Profiling
+</a>
+</li>
+
+<li class='navbar-v2web dropdown'>
+<a href='Message-Profiles.html#4-4-Data-Type-Profiling'>
+4.4 Data Type Profiling
+</a>
+</li>
+
+<li class='navbar-v2web dropdown'>
+<a href='Message-Profiles.html#4-5-Primitive-Element-Profiling'>
+4.5 Primitive Element Profiling
+</a>
+</li>
+
+<li class='navbar-v2web dropdown'>
+<a href='Message-Profiles.html#4-6-Differential-Profiles'>
+4.6 Differential Profiles
+</a>
+</li>
+
+<li class='navbar-v2web dropdown'>
+<a href='Message-Profiles.html#4-7-Extensions'>
+4.7 Extensions
+</a>
+</li>
+
+</ul>
+</li>
+
+<li class='navbar-v2web dropdown-submenu'>
+<a href='Constraints.html'>
+5 Constraints
+</a>
+<ul class='dropdown-menu'>
+<li class='navbar-v2web dropdown'>
+<a href='Constraints.html#5-1-Usage'>
+5.1 Usage
+</a>
+</li>
+
+<li class='navbar-v2web dropdown'>
+<a href='Constraints.html#5-2-Cardinality'>
+5.2 Cardinality
+</a>
+</li>
+
+<li class='navbar-v2web dropdown'>
+<a href='Constraints.html#5-3-Data-Type-Specialization--Flavor-'>
+5.3 Data Type Specialization (Flavor)
+</a>
+</li>
+
+<li class='navbar-v2web dropdown'>
+<a href='Constraints.html#5-4-Content'>
+5.4 Content
+</a>
+</li>
+
+<li class='navbar-v2web dropdown'>
+<a href='Constraints.html#5-5-Length'>
+5.5 Length
+</a>
+</li>
+
+<li class='navbar-v2web dropdown'>
+<a href='Constraints.html#5-6-Slicing'>
+5.6 Slicing
+</a>
+</li>
+
+<li class='navbar-v2web dropdown'>
+<a href='Constraints.html#5-7-Conformance-Statement'>
+5.7 Conformance Statement
+</a>
+</li>
+
+<li class='navbar-v2web dropdown'>
+<a href='Constraints.html#5-8-Co-Constraints'>
+5.8 Co-Constraints
+</a>
+</li>
+
+<li class='navbar-v2web dropdown'>
+<a href='Constraints.html#5-9-Semantic-Refinement'>
+5.9 Semantic Refinement
+</a>
+</li>
+
+</ul>
+</li>
+
+<li class='navbar-v2web dropdown-submenu'>
+<a href='Vocabulary-Constraints.html'>
+6 Vocabulary Constraints
+</a>
+<ul class='dropdown-menu'>
+<li class='navbar-v2web dropdown'>
+<a href='Vocabulary-Constraints.html#6-1-Vocabulary-Profiling-Mechanics'>
+6.1 Vocabulary Profiling Mechanics
+</a>
+</li>
+
+<li class='navbar-v2web dropdown'>
+<a href='Vocabulary-Constraints.html#6-2-Typical-Vocabulary-Bindings'>
+6.2 Typical Vocabulary Bindings
+</a>
+</li>
+
+<li class='navbar-v2web dropdown'>
+<a href='Vocabulary-Constraints.html#6-3-Single-Code-Element-Binding'>
+6.3 Single Code Element Binding
+</a>
+</li>
+
+<li class='navbar-v2web dropdown'>
+<a href='Vocabulary-Constraints.html#6-4-Use-of-Extensibility-and-Stability'>
+6.4 Use of Extensibility and Stability
+</a>
+</li>
+
+<li class='navbar-v2web dropdown'>
+<a href='Vocabulary-Constraints.html#6-5-Profiling-at-the-Code-Level'>
+6.5 Profiling at the Code Level
+</a>
+</li>
+
+<li class='navbar-v2web dropdown'>
+<a href='Vocabulary-Constraints.html#6-6-Profiling-HL7-Tables'>
+6.6 Profiling HL7 Tables
+</a>
+</li>
+
+<li class='navbar-v2web dropdown'>
+<a href='Vocabulary-Constraints.html#6-7-Null-Flavors'>
+6.7 Null Flavors
+</a>
+</li>
+
+<li class='navbar-v2web dropdown'>
+<a href='Vocabulary-Constraints.html#6-8-Relationship-of-Coded-Element-Based-Data-Types-and-Flavors'>
+6.8 Relationship of Coded Element Based Data Types and Flavors
+</a>
+</li>
+
+</ul>
+</li>
+
+<li class='navbar-v2web dropdown-submenu'>
+<a href='Profile-Construction.html'>
+7 Profile Construction
+</a>
+<ul class='dropdown-menu'>
+<li class='navbar-v2web dropdown'>
+<a href='Profile-Construction.html#7-1-Profile-Design-and-Management'>
+7.1 Profile Design and Management
+</a>
+</li>
+
+<li class='navbar-v2web dropdown'>
+<a href='Profile-Construction.html#7-2-Selective-Adoption'>
+7.2 Selective Adoption
+</a>
+</li>
+
+</ul>
+</li>
+
+<li class='navbar-v2web dropdown-submenu'>
+<a href='Pairing-Sender-and-Receiver-Profile-for-Use-.html'>
+8 Pairing Sender and Receiver Profile for Use 
+</a>
+<ul class='dropdown-menu'>
+<li class='navbar-v2web dropdown'>
+<a href='Pairing-Sender-and-Receiver-Profile-for-Use-.html#8-1-One-to-one-Profile-Pairing'>
+8.1 One-to-one Profile Pairing
+</a>
+</li>
+
+<li class='navbar-v2web dropdown'>
+<a href='Pairing-Sender-and-Receiver-Profile-for-Use-.html#8-2-One-to-many-Profile-Pairing'>
+8.2 One-to-many Profile Pairing
+</a>
+</li>
+
+<li class='navbar-v2web dropdown'>
+<a href='Pairing-Sender-and-Receiver-Profile-for-Use-.html#8-3-Many-to-one-Profile-Pairing'>
+8.3 Many-to-one Profile Pairing
+</a>
+</li>
+
+<li class='navbar-v2web dropdown'>
+<a href='Pairing-Sender-and-Receiver-Profile-for-Use-.html#8-4-Design-Considerations--Profiling-Pairing'>
+8.4 Design Considerations: Profiling Pairing
+</a>
+</li>
+
+</ul>
+</li>
+
+<li class='navbar-v2web dropdown-submenu'>
+<a href='Profile-Documentation.html'>
+9 Profile Documentation
+</a>
+<ul class='dropdown-menu'>
+<li class='navbar-v2web dropdown'>
+<a href='Profile-Documentation.html#9-1-Profile-and-Implementation-Relationships'>
+9.1 Profile and Implementation Relationships
+</a>
+</li>
+
+<li class='navbar-v2web dropdown'>
+<a href='Profile-Documentation.html#9-2-Documentation-Quality'>
+9.2 Documentation Quality
+</a>
+</li>
+
+</ul>
+</li>
+
+<li class='navbar-v2web dropdown-submenu'>
+<a href='Computable-Document-Definitions.html'>
+10 Computable Document Definitions
+</a>
+<ul class='dropdown-menu'>
+<li class='navbar-v2web dropdown'>
+<a href='Computable-Document-Definitions.html#10-1-Document-Definitions-Layout'>
+10.1 Document Definitions Layout
+</a>
+</li>
+
+<li class='navbar-v2web dropdown'>
+<a href='Computable-Document-Definitions.html#10-2-Meta-Data'>
+10.2 Meta Data
+</a>
+</li>
+
+</ul>
+</li>
+
+<li class='navbar-v2web dropdown'>
+<a href='Glossary.html'>
+11 Glossary
+</a>
+</li>
+
+<li class='navbar-v2web dropdown-submenu'>
+<a href='Appendix-A-Predicate-Definition-Language.html'>
+12 Appendix A: Predicate Definition Language
+</a>
+<ul class='dropdown-menu'>
+<li class='navbar-v2web dropdown'>
+<a href='Appendix-A-Predicate-Definition-Language.html#12-1-IF-Statement'>
+12.1 IF Statement
+</a>
+</li>
+
+<li class='navbar-v2web dropdown'>
+<a href='Appendix-A-Predicate-Definition-Language.html#12-2-Occurrence-Declarative-Statement'>
+12.2 Occurrence-Declarative Statement
+</a>
+</li>
+
+<li class='navbar-v2web dropdown'>
+<a href='Appendix-A-Predicate-Definition-Language.html#12-3-Element-Location'>
+12.3 Element Location
+</a>
+</li>
+
+<li class='navbar-v2web dropdown'>
+<a href='Appendix-A-Predicate-Definition-Language.html#12-4-Context'>
+12.4 Context
+</a>
+</li>
+
+<li class='navbar-v2web dropdown'>
+<a href='Appendix-A-Predicate-Definition-Language.html#12-5-Verbs'>
+12.5 Verbs
+</a>
+</li>
+
+<li class='navbar-v2web dropdown'>
+<a href='Appendix-A-Predicate-Definition-Language.html#12-6-Content-Declarative-Statements'>
+12.6 Content-Declarative Statements
+</a>
+</li>
+
+<li class='navbar-v2web dropdown'>
+<a href='Appendix-A-Predicate-Definition-Language.html#12-7-Comparison-Content-Declarative-Statement'>
+12.7 Comparison-Content Declarative Statement
+</a>
+</li>
+
+<li class='navbar-v2web dropdown'>
+<a href='Appendix-A-Predicate-Definition-Language.html#12-8-Complex-Condition-Predicates'>
+12.8 Complex Condition Predicates
+</a>
+</li>
+
+</ul>
+</li>
+
+<li class='navbar-v2web dropdown-submenu'>
+<a href='Appendix-B-Conformance-Statement-Definition-Language.html'>
+13 Appendix B: Conformance Statement Definition Language
+</a>
+<ul class='dropdown-menu'>
+<li class='navbar-v2web dropdown'>
+<a href='Appendix-B-Conformance-Statement-Definition-Language.html#13-1-Element-Location'>
+13.1 Element Location
+</a>
+</li>
+
+<li class='navbar-v2web dropdown'>
+<a href='Appendix-B-Conformance-Statement-Definition-Language.html#13-2-Propositions'>
+13.2 Propositions
+</a>
+</li>
+
+<li class='navbar-v2web dropdown'>
+<a href='Appendix-B-Conformance-Statement-Definition-Language.html#13-3-Occurrence-Declarative-Statement'>
+13.3 Occurrence-Declarative Statement
+</a>
+</li>
+
+<li class='navbar-v2web dropdown'>
+<a href='Appendix-B-Conformance-Statement-Definition-Language.html#13-4-Context'>
+13.4 Context
+</a>
+</li>
+
+<li class='navbar-v2web dropdown'>
+<a href='Appendix-B-Conformance-Statement-Definition-Language.html#13-5-Verbs'>
+13.5 Verbs
+</a>
+</li>
+
+<li class='navbar-v2web dropdown'>
+<a href='Appendix-B-Conformance-Statement-Definition-Language.html#13-6-Content-Declarative-Statement'>
+13.6 Content-Declarative Statement
+</a>
+</li>
+
+<li class='navbar-v2web dropdown'>
+<a href='Appendix-B-Conformance-Statement-Definition-Language.html#13-7-Comparison-Content-Declarative-Statement'>
+13.7 Comparison-Content Declarative Statement
+</a>
+</li>
+
+<li class='navbar-v2web dropdown'>
+<a href='Appendix-B-Conformance-Statement-Definition-Language.html#13-8-Complex-Conformance-Statements'>
+13.8 Complex Conformance Statements
+</a>
+</li>
+
+<li class='navbar-v2web dropdown'>
+<a href='Appendix-B-Conformance-Statement-Definition-Language.html#13-9-Free-Text-Conformance-Statements'>
+13.9 Free-Text Conformance Statements
+</a>
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class='container'>
+<div id='v2draft'>
+<h1>
+Draft Website - For Review Purposes Only
+</h1>
+</div>
+</div>
+</div>
+<!-- #segment-breadcrumb.segment -->
+<!-- .container -->
+<!-- %ul.breadcrumb -->
+<!-- %li -->
+<!-- %b -->
+<!-- %a{:href => homepage_url} Home -->
+</nav>
+<div class='container'>
+<ul style='list-style-type:none'>
+<li>
+<a href='Introduction.html'>
+1 Introduction
+</a>
+<ul style='list-style-type:none'>
+<li>
+<a href='Introduction.html#1-1-Purpose'>
+1.1 Purpose
+</a>
+<ul style='list-style-type:none'>
+<li>
+<a href='Introduction.html#1-1-1-Relevant-Specifications'>
+1.1.1 Relevant Specifications
+</a>
+<ul style='list-style-type:none'>
+
+</ul>
+</li>
+
+<li>
+<a href='Introduction.html#1-1-2-Requisite-Knowledge'>
+1.1.2 Requisite Knowledge
+</a>
+<ul style='list-style-type:none'>
+
+</ul>
+</li>
+
+<li>
+<a href='Introduction.html#1-1-3-Supplemental-Resources'>
+1.1.3 Supplemental Resources
+</a>
+<ul style='list-style-type:none'>
+
+</ul>
+</li>
+
+</ul>
+</li>
+
+<li>
+<a href='Introduction.html#1-2-Conventions-and-Definitions'>
+1.2 Conventions and Definitions
+</a>
+<ul style='list-style-type:none'>
+<li>
+<a href='Introduction.html#1-2-1-Definitions'>
+1.2.1 Definitions
+</a>
+<ul style='list-style-type:none'>
+
+</ul>
+</li>
+
+<li>
+<a href='Introduction.html#1-2-2-Element-Representation'>
+1.2.2 Element Representation
+</a>
+<ul style='list-style-type:none'>
+
+</ul>
+</li>
+
+</ul>
+</li>
+
+<li>
+<a href='Introduction.html#1-3-Concepts-and-their-Relationships'>
+1.3 Concepts and their Relationships
+</a>
+<ul style='list-style-type:none'>
+
+</ul>
+</li>
+
+<li>
+<a href='Introduction.html#1-4-Profiling-and-Profile-Construction-Overview'>
+1.4 Profiling and Profile Construction Overview
+</a>
+<ul style='list-style-type:none'>
+<li>
+<a href='Introduction.html#1-4-1-Profiling'>
+1.4.1 Profiling
+</a>
+<ul style='list-style-type:none'>
+
+</ul>
+</li>
+
+<li>
+<a href='Introduction.html#1-4-2-Constraints'>
+1.4.2 Constraints
+</a>
+<ul style='list-style-type:none'>
+
+</ul>
+</li>
+
+<li>
+<a href='Introduction.html#1-4-3-Profile-Construction'>
+1.4.3 Profile Construction
+</a>
+<ul style='list-style-type:none'>
+
+</ul>
+</li>
+
+<li>
+<a href='Introduction.html#1-4-4-Profile-Role-and-Compatibility'>
+1.4.4 Profile Role and Compatibility
+</a>
+<ul style='list-style-type:none'>
+
+</ul>
+</li>
+
+<li>
+<a href='Introduction.html#1-4-5-Segment-Flavors-and-Data-Type-Flavors'>
+1.4.5 Segment Flavors and Data Type Flavors
+</a>
+<ul style='list-style-type:none'>
+
+</ul>
+</li>
+
+</ul>
+</li>
+
+<li>
+<a href='Introduction.html#1-5-Implementation-Guides-in-Context-of-Use'>
+1.5 Implementation Guides in Context of Use
+</a>
+<ul style='list-style-type:none'>
+<li>
+<a href='Introduction.html#1-5-1-Validation-and-the-Response-to-Validation-Results'>
+1.5.1 Validation and the Response to Validation Results
+</a>
+<ul style='list-style-type:none'>
+
+</ul>
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+
+<li>
+<a href='Profile-Levels.html'>
+2 Profile Levels
+</a>
+<ul style='list-style-type:none'>
+<li>
+<a href='Profile-Levels.html#2-1-Profiles-in-Use'>
+2.1 Profiles in Use
+</a>
+<ul style='list-style-type:none'>
+
+</ul>
+</li>
+
+</ul>
+</li>
+
+<li>
+<a href='HL7-v2-Implementation-Guides.html'>
+3 HL7 v2 Implementation Guides
+</a>
+<ul style='list-style-type:none'>
+<li>
+<a href='HL7-v2-Implementation-Guides.html#3-1-Background'>
+3.1 Background
+</a>
+<ul style='list-style-type:none'>
+<li>
+<a href='HL7-v2-Implementation-Guides.html#3-1-1-Introduction'>
+3.1.1 Introduction
+</a>
+<ul style='list-style-type:none'>
+
+</ul>
+</li>
+
+<li>
+<a href='HL7-v2-Implementation-Guides.html#3-1-2-Purpose'>
+3.1.2 Purpose
+</a>
+<ul style='list-style-type:none'>
+
+</ul>
+</li>
+
+<li>
+<a href='HL7-v2-Implementation-Guides.html#3-1-3-Intended-Audience'>
+3.1.3 Intended Audience
+</a>
+<ul style='list-style-type:none'>
+
+</ul>
+</li>
+
+<li>
+<a href='HL7-v2-Implementation-Guides.html#3-1-4-Scope'>
+3.1.4 Scope
+</a>
+<ul style='list-style-type:none'>
+
+</ul>
+</li>
+
+<li>
+<a href='HL7-v2-Implementation-Guides.html#3-1-5-Organization-of-This-Guide'>
+3.1.5 Organization of This Guide
+</a>
+<ul style='list-style-type:none'>
+
+</ul>
+</li>
+
+<li>
+<a href='HL7-v2-Implementation-Guides.html#3-1-6-Reference-Specifications-Antecedents'>
+3.1.6 Reference Specifications—Antecedents
+</a>
+<ul style='list-style-type:none'>
+
+</ul>
+</li>
+
+<li>
+<a href='HL7-v2-Implementation-Guides.html#3-1-7-Conventions'>
+3.1.7 Conventions
+</a>
+<ul style='list-style-type:none'>
+
+</ul>
+</li>
+
+<li>
+<a href='HL7-v2-Implementation-Guides.html#3-1-8-Conformance-Clause'>
+3.1.8 Conformance Clause
+</a>
+<ul style='list-style-type:none'>
+
+</ul>
+</li>
+
+</ul>
+</li>
+
+<li>
+<a href='HL7-v2-Implementation-Guides.html#3-2-Actors'>
+3.2 Actors
+</a>
+<ul style='list-style-type:none'>
+
+</ul>
+</li>
+
+<li>
+<a href='HL7-v2-Implementation-Guides.html#3-3-Use-Case'>
+3.3 Use Case
+</a>
+<ul style='list-style-type:none'>
+<li>
+<a href='HL7-v2-Implementation-Guides.html#3-3-1-Interaction-Specification'>
+3.3.1 Interaction Specification
+</a>
+<ul style='list-style-type:none'>
+<li>
+<a href='HL7-v2-Implementation-Guides.html#3-3-1-1-Interaction-Model'>
+3.3.1.1 Interaction Model
+</a>
+<ul style='list-style-type:none'>
+
+</ul>
+</li>
+
+<li>
+<a href='HL7-v2-Implementation-Guides.html#3-3-1-2-Acknowledgement-Responsibilities-'>
+3.3.1.2 Acknowledgement Responsibilities 
+</a>
+<ul style='list-style-type:none'>
+
+</ul>
+</li>
+
+</ul>
+</li>
+
+<li>
+<a href='HL7-v2-Implementation-Guides.html#3-3-2-Functional-Requirements'>
+3.3.2 Functional Requirements
+</a>
+<ul style='list-style-type:none'>
+
+</ul>
+</li>
+
+<li>
+<a href='HL7-v2-Implementation-Guides.html#3-3-3-Example-Messages'>
+3.3.3 Example Messages
+</a>
+<ul style='list-style-type:none'>
+
+</ul>
+</li>
+
+</ul>
+</li>
+
+<li>
+<a href='HL7-v2-Implementation-Guides.html#3-4-Messaging-Infrastructure'>
+3.4 Messaging Infrastructure
+</a>
+<ul style='list-style-type:none'>
+
+</ul>
+</li>
+
+<li>
+<a href='HL7-v2-Implementation-Guides.html#3-5-Other-Relevant-Information'>
+3.5 Other Relevant Information
+</a>
+<ul style='list-style-type:none'>
+
+</ul>
+</li>
+
+</ul>
+</li>
+
+<li>
+<a href='Message-Profiles.html'>
+4 Message Profiles
+</a>
+<ul style='list-style-type:none'>
+<li>
+<a href='Message-Profiles.html#4-1-Message-Profile-Identification'>
+4.1 Message Profile Identification
+</a>
+<ul style='list-style-type:none'>
+
+</ul>
+</li>
+
+<li>
+<a href='Message-Profiles.html#4-2-Message-Level-Profiling'>
+4.2 Message Level Profiling
+</a>
+<ul style='list-style-type:none'>
+
+</ul>
+</li>
+
+<li>
+<a href='Message-Profiles.html#4-3-Segment-Level-Profiling'>
+4.3 Segment Level Profiling
+</a>
+<ul style='list-style-type:none'>
+
+</ul>
+</li>
+
+<li>
+<a href='Message-Profiles.html#4-4-Data-Type-Profiling'>
+4.4 Data Type Profiling
+</a>
+<ul style='list-style-type:none'>
+
+</ul>
+</li>
+
+<li>
+<a href='Message-Profiles.html#4-5-Primitive-Element-Profiling'>
+4.5 Primitive Element Profiling
+</a>
+<ul style='list-style-type:none'>
+
+</ul>
+</li>
+
+<li>
+<a href='Message-Profiles.html#4-6-Differential-Profiles'>
+4.6 Differential Profiles
+</a>
+<ul style='list-style-type:none'>
+
+</ul>
+</li>
+
+<li>
+<a href='Message-Profiles.html#4-7-Extensions'>
+4.7 Extensions
+</a>
+<ul style='list-style-type:none'>
+
+</ul>
+</li>
+
+</ul>
+</li>
+
+<li>
+<a href='Constraints.html'>
+5 Constraints
+</a>
+<ul style='list-style-type:none'>
+<li>
+<a href='Constraints.html#5-1-Usage'>
+5.1 Usage
+</a>
+<ul style='list-style-type:none'>
+<li>
+<a href='Constraints.html#5-1-1-Usage-Requirements-for-Sending-Applications'>
+5.1.1 Usage Requirements for Sending Applications
+</a>
+<ul style='list-style-type:none'>
+
+</ul>
+</li>
+
+<li>
+<a href='Constraints.html#5-1-2-Usage-Requirements-for-Receiving-Applications'>
+5.1.2 Usage Requirements for Receiving Applications
+</a>
+<ul style='list-style-type:none'>
+
+</ul>
+</li>
+
+<li>
+<a href='Constraints.html#5-1-3-Conditional-Usage'>
+5.1.3 Conditional Usage
+</a>
+<ul style='list-style-type:none'>
+<li>
+<a href='Constraints.html#5-1-3-1-Undeclared-Conditional-Usage'>
+5.1.3.1 Undeclared Conditional Usage
+</a>
+<ul style='list-style-type:none'>
+
+</ul>
+</li>
+
+<li>
+<a href='Constraints.html#5-1-3-2-Declared-Conditional-Usage'>
+5.1.3.2 Declared Conditional Usage
+</a>
+<ul style='list-style-type:none'>
+
+</ul>
+</li>
+
+<li>
+<a href='Constraints.html#5-1-3-3-Factoring-Conditional-Usage-to-Non-conditional-Usage'>
+5.1.3.3 Factoring Conditional Usage to Non-conditional Usage
+</a>
+<ul style='list-style-type:none'>
+
+</ul>
+</li>
+
+<li>
+<a href='Constraints.html#5-1-3-4-Predicate-Definition'>
+5.1.3.4 Predicate Definition
+</a>
+<ul style='list-style-type:none'>
+
+</ul>
+</li>
+
+</ul>
+</li>
+
+<li>
+<a href='Constraints.html#5-1-4-Usage-Compliance'>
+5.1.4 Usage Compliance
+</a>
+<ul style='list-style-type:none'>
+<li>
+<a href='Constraints.html#5-1-4-1-Conditional-Usage-Compliance'>
+5.1.4.1 Conditional Usage Compliance
+</a>
+<ul style='list-style-type:none'>
+
+</ul>
+</li>
+
+</ul>
+</li>
+
+<li>
+<a href='Constraints.html#5-1-5-Usage-Compatibility'>
+5.1.5 Usage Compatibility
+</a>
+<ul style='list-style-type:none'>
+
+</ul>
+</li>
+
+<li>
+<a href='Constraints.html#5-1-6-Usage-and-Conformance'>
+5.1.6 Usage and Conformance
+</a>
+<ul style='list-style-type:none'>
+
+</ul>
+</li>
+
+</ul>
+</li>
+
+<li>
+<a href='Constraints.html#5-2-Cardinality'>
+5.2 Cardinality
+</a>
+<ul style='list-style-type:none'>
+<li>
+<a href='Constraints.html#5-2-1-Relationship-between-usage-and-cardinality'>
+5.2.1 Relationship between usage and cardinality
+</a>
+<ul style='list-style-type:none'>
+
+</ul>
+</li>
+
+<li>
+<a href='Constraints.html#5-2-2-Repetition--Occurrence--and-Cardinality'>
+5.2.2 Repetition, Occurrence, and Cardinality
+</a>
+<ul style='list-style-type:none'>
+
+</ul>
+</li>
+
+<li>
+<a href='Constraints.html#5-2-3-Cardinality-Compliance'>
+5.2.3 Cardinality Compliance
+</a>
+<ul style='list-style-type:none'>
+
+</ul>
+</li>
+
+<li>
+<a href='Constraints.html#5-2-4-Cardinality-Compatibility'>
+5.2.4 Cardinality Compatibility
+</a>
+<ul style='list-style-type:none'>
+
+</ul>
+</li>
+
+</ul>
+</li>
+
+<li>
+<a href='Constraints.html#5-3-Data-Type-Specialization--Flavor-'>
+5.3 Data Type Specialization (Flavor)
+</a>
+<ul style='list-style-type:none'>
+<li>
+<a href='Constraints.html#5-3-1-Root-Data-Type-Substitution'>
+5.3.1 Root Data Type Substitution
+</a>
+<ul style='list-style-type:none'>
+
+</ul>
+</li>
+
+<li>
+<a href='Constraints.html#5-3-2-Data-Type-Compatibility'>
+5.3.2 Data Type Compatibility
+</a>
+<ul style='list-style-type:none'>
+
+</ul>
+</li>
+
+</ul>
+</li>
+
+<li>
+<a href='Constraints.html#5-4-Content'>
+5.4 Content
+</a>
+<ul style='list-style-type:none'>
+
+</ul>
+</li>
+
+<li>
+<a href='Constraints.html#5-5-Length'>
+5.5 Length
+</a>
+<ul style='list-style-type:none'>
+<li>
+<a href='Constraints.html#5-5-1-Minimum-and-Maximum-Length'>
+5.5.1 Minimum and Maximum Length
+</a>
+<ul style='list-style-type:none'>
+
+</ul>
+</li>
+
+<li>
+<a href='Constraints.html#5-5-2-Conformance-Length'>
+5.5.2 Conformance Length
+</a>
+<ul style='list-style-type:none'>
+
+</ul>
+</li>
+
+<li>
+<a href='Constraints.html#5-5-3-Truncation'>
+5.5.3 Truncation
+</a>
+<ul style='list-style-type:none'>
+
+</ul>
+</li>
+
+<li>
+<a href='Constraints.html#5-5-4-General-length-Conformance-Rules'>
+5.5.4 General length Conformance Rules
+</a>
+<ul style='list-style-type:none'>
+
+</ul>
+</li>
+
+</ul>
+</li>
+
+<li>
+<a href='Constraints.html#5-6-Slicing'>
+5.6 Slicing
+</a>
+<ul style='list-style-type:none'>
+<li>
+<a href='Constraints.html#5-6-1-Slicing-Using-a-Discriminator'>
+5.6.1 Slicing Using a Discriminator
+</a>
+<ul style='list-style-type:none'>
+<li>
+<a href='Constraints.html#5-6-1-1-Fixed-Value-Discriminator-Specification-and-Examples'>
+5.6.1.1 Fixed Value Discriminator Specification and Examples
+</a>
+<ul style='list-style-type:none'>
+
+</ul>
+</li>
+
+<li>
+<a href='Constraints.html#5-6-1-2-Exists-Discriminator-Specification-and-Examples'>
+5.6.1.2 Exists Discriminator Specification and Examples
+</a>
+<ul style='list-style-type:none'>
+
+</ul>
+</li>
+
+<li>
+<a href='Constraints.html#5-6-1-3-Pattern-Discriminator-Specification-and-Examples'>
+5.6.1.3 Pattern Discriminator Specification and Examples
+</a>
+<ul style='list-style-type:none'>
+
+</ul>
+</li>
+
+</ul>
+</li>
+
+<li>
+<a href='Constraints.html#5-6-2-Slicing-Using-Ordering'>
+5.6.2 Slicing Using Ordering
+</a>
+<ul style='list-style-type:none'>
+
+</ul>
+</li>
+
+<li>
+<a href='Constraints.html#5-6-3-Non-Selective-Slicing'>
+5.6.3 Non-Selective Slicing
+</a>
+<ul style='list-style-type:none'>
+
+</ul>
+</li>
+
+</ul>
+</li>
+
+<li>
+<a href='Constraints.html#5-7-Conformance-Statement'>
+5.7 Conformance Statement
+</a>
+<ul style='list-style-type:none'>
+
+</ul>
+</li>
+
+<li>
+<a href='Constraints.html#5-8-Co-Constraints'>
+5.8 Co-Constraints
+</a>
+<ul style='list-style-type:none'>
+
+</ul>
+</li>
+
+<li>
+<a href='Constraints.html#5-9-Semantic-Refinement'>
+5.9 Semantic Refinement
+</a>
+<ul style='list-style-type:none'>
+<li>
+<a href='Constraints.html#5-9-1-Annotations'>
+5.9.1 Annotations
+</a>
+<ul style='list-style-type:none'>
+
+</ul>
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+
+<li>
+<a href='Vocabulary-Constraints.html'>
+6 Vocabulary Constraints
+</a>
+<ul style='list-style-type:none'>
+<li>
+<a href='Vocabulary-Constraints.html#6-1-Vocabulary-Profiling-Mechanics'>
+6.1 Vocabulary Profiling Mechanics
+</a>
+<ul style='list-style-type:none'>
+
+</ul>
+</li>
+
+<li>
+<a href='Vocabulary-Constraints.html#6-2-Typical-Vocabulary-Bindings'>
+6.2 Typical Vocabulary Bindings
+</a>
+<ul style='list-style-type:none'>
+
+</ul>
+</li>
+
+<li>
+<a href='Vocabulary-Constraints.html#6-3-Single-Code-Element-Binding'>
+6.3 Single Code Element Binding
+</a>
+<ul style='list-style-type:none'>
+
+</ul>
+</li>
+
+<li>
+<a href='Vocabulary-Constraints.html#6-4-Use-of-Extensibility-and-Stability'>
+6.4 Use of Extensibility and Stability
+</a>
+<ul style='list-style-type:none'>
+
+</ul>
+</li>
+
+<li>
+<a href='Vocabulary-Constraints.html#6-5-Profiling-at-the-Code-Level'>
+6.5 Profiling at the Code Level
+</a>
+<ul style='list-style-type:none'>
+<li>
+<a href='Vocabulary-Constraints.html#6-5-1-Vocabulary-Compatibility'>
+6.5.1 Vocabulary Compatibility
+</a>
+<ul style='list-style-type:none'>
+
+</ul>
+</li>
+
+</ul>
+</li>
+
+<li>
+<a href='Vocabulary-Constraints.html#6-6-Profiling-HL7-Tables'>
+6.6 Profiling HL7 Tables
+</a>
+<ul style='list-style-type:none'>
+
+</ul>
+</li>
+
+<li>
+<a href='Vocabulary-Constraints.html#6-7-Null-Flavors'>
+6.7 Null Flavors
+</a>
+<ul style='list-style-type:none'>
+
+</ul>
+</li>
+
+<li>
+<a href='Vocabulary-Constraints.html#6-8-Relationship-of-Coded-Element-Based-Data-Types-and-Flavors'>
+6.8 Relationship of Coded Element Based Data Types and Flavors
+</a>
+<ul style='list-style-type:none'>
+
+</ul>
+</li>
+
+</ul>
+</li>
+
+<li>
+<a href='Profile-Construction.html'>
+7 Profile Construction
+</a>
+<ul style='list-style-type:none'>
+<li>
+<a href='Profile-Construction.html#7-1-Profile-Design-and-Management'>
+7.1 Profile Design and Management
+</a>
+<ul style='list-style-type:none'>
+<li>
+<a href='Profile-Construction.html#7-1-1-Profile-Components'>
+7.1.1 Profile Components
+</a>
+<ul style='list-style-type:none'>
+
+</ul>
+</li>
+
+<li>
+<a href='Profile-Construction.html#7-1-2-Composite-Profiles'>
+7.1.2 Composite Profiles
+</a>
+<ul style='list-style-type:none'>
+
+</ul>
+</li>
+
+<li>
+<a href='Profile-Construction.html#7-1-3-Profile-Construction-Examples'>
+7.1.3 Profile Construction Examples
+</a>
+<ul style='list-style-type:none'>
+
+</ul>
+</li>
+
+</ul>
+</li>
+
+<li>
+<a href='Profile-Construction.html#7-2-Selective-Adoption'>
+7.2 Selective Adoption
+</a>
+<ul style='list-style-type:none'>
+<li>
+<a href='Profile-Construction.html#7-2-1-Rationale-for-Selective-Adoption'>
+7.2.1 Rationale for Selective Adoption
+</a>
+<ul style='list-style-type:none'>
+
+</ul>
+</li>
+
+<li>
+<a href='Profile-Construction.html#7-2-2-Methods-for-Selective-Adoption'>
+7.2.2 Methods for Selective Adoption
+</a>
+<ul style='list-style-type:none'>
+<li>
+<a href='Profile-Construction.html#7-2-2-1-Selective-Pre-Adoption'>
+7.2.2.1 Selective Pre-Adoption
+</a>
+<ul style='list-style-type:none'>
+
+</ul>
+</li>
+
+<li>
+<a href='Profile-Construction.html#7-2-2-2-Selective-Post-Adoption'>
+7.2.2.2 Selective Post-Adoption
+</a>
+<ul style='list-style-type:none'>
+
+</ul>
+</li>
+
+<li>
+<a href='Profile-Construction.html#7-2-2-3-Selective-Post-Adoption-from-Current-HL7-v2--Edition'>
+7.2.2.3 Selective Post-Adoption from Current HL7 v2+ Edition
+</a>
+<ul style='list-style-type:none'>
+
+</ul>
+</li>
+
+</ul>
+</li>
+
+<li>
+<a href='Profile-Construction.html#7-2-3-Object-Adoption-Limitations-and-Rules'>
+7.2.3 Object Adoption Limitations and Rules
+</a>
+<ul style='list-style-type:none'>
+
+</ul>
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+
+<li>
+<a href='Pairing-Sender-and-Receiver-Profile-for-Use-.html'>
+8 Pairing Sender and Receiver Profile for Use 
+</a>
+<ul style='list-style-type:none'>
+<li>
+<a href='Pairing-Sender-and-Receiver-Profile-for-Use-.html#8-1-One-to-one-Profile-Pairing'>
+8.1 One-to-one Profile Pairing
+</a>
+<ul style='list-style-type:none'>
+
+</ul>
+</li>
+
+<li>
+<a href='Pairing-Sender-and-Receiver-Profile-for-Use-.html#8-2-One-to-many-Profile-Pairing'>
+8.2 One-to-many Profile Pairing
+</a>
+<ul style='list-style-type:none'>
+
+</ul>
+</li>
+
+<li>
+<a href='Pairing-Sender-and-Receiver-Profile-for-Use-.html#8-3-Many-to-one-Profile-Pairing'>
+8.3 Many-to-one Profile Pairing
+</a>
+<ul style='list-style-type:none'>
+
+</ul>
+</li>
+
+<li>
+<a href='Pairing-Sender-and-Receiver-Profile-for-Use-.html#8-4-Design-Considerations--Profiling-Pairing'>
+8.4 Design Considerations: Profiling Pairing
+</a>
+<ul style='list-style-type:none'>
+
+</ul>
+</li>
+
+</ul>
+</li>
+
+<li>
+<a href='Profile-Documentation.html'>
+9 Profile Documentation
+</a>
+<ul style='list-style-type:none'>
+<li>
+<a href='Profile-Documentation.html#9-1-Profile-and-Implementation-Relationships'>
+9.1 Profile and Implementation Relationships
+</a>
+<ul style='list-style-type:none'>
+
+</ul>
+</li>
+
+<li>
+<a href='Profile-Documentation.html#9-2-Documentation-Quality'>
+9.2 Documentation Quality
+</a>
+<ul style='list-style-type:none'>
+
+</ul>
+</li>
+
+</ul>
+</li>
+
+<li>
+<a href='Computable-Document-Definitions.html'>
+10 Computable Document Definitions
+</a>
+<ul style='list-style-type:none'>
+<li>
+<a href='Computable-Document-Definitions.html#10-1-Document-Definitions-Layout'>
+10.1 Document Definitions Layout
+</a>
+<ul style='list-style-type:none'>
+
+</ul>
+</li>
+
+<li>
+<a href='Computable-Document-Definitions.html#10-2-Meta-Data'>
+10.2 Meta Data
+</a>
+<ul style='list-style-type:none'>
+<li>
+<a href='Computable-Document-Definitions.html#10-2-1-Implementation-Guide-Meta-Data'>
+10.2.1 Implementation Guide Meta Data
+</a>
+<ul style='list-style-type:none'>
+
+</ul>
+</li>
+
+<li>
+<a href='Computable-Document-Definitions.html#10-2-2-Message-Profile-Meta-Data'>
+10.2.2 Message Profile Meta Data
+</a>
+<ul style='list-style-type:none'>
+
+</ul>
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+
+<li>
+<a href='Glossary.html'>
+11 Glossary
+</a>
+<ul style='list-style-type:none'>
+
+</ul>
+</li>
+
+<li>
+<a href='Appendix-A-Predicate-Definition-Language.html'>
+12 Appendix A: Predicate Definition Language
+</a>
+<ul style='list-style-type:none'>
+<li>
+<a href='Appendix-A-Predicate-Definition-Language.html#12-1-IF-Statement'>
+12.1 IF Statement
+</a>
+<ul style='list-style-type:none'>
+
+</ul>
+</li>
+
+<li>
+<a href='Appendix-A-Predicate-Definition-Language.html#12-2-Occurrence-Declarative-Statement'>
+12.2 Occurrence-Declarative Statement
+</a>
+<ul style='list-style-type:none'>
+
+</ul>
+</li>
+
+<li>
+<a href='Appendix-A-Predicate-Definition-Language.html#12-3-Element-Location'>
+12.3 Element Location
+</a>
+<ul style='list-style-type:none'>
+
+</ul>
+</li>
+
+<li>
+<a href='Appendix-A-Predicate-Definition-Language.html#12-4-Context'>
+12.4 Context
+</a>
+<ul style='list-style-type:none'>
+
+</ul>
+</li>
+
+<li>
+<a href='Appendix-A-Predicate-Definition-Language.html#12-5-Verbs'>
+12.5 Verbs
+</a>
+<ul style='list-style-type:none'>
+
+</ul>
+</li>
+
+<li>
+<a href='Appendix-A-Predicate-Definition-Language.html#12-6-Content-Declarative-Statements'>
+12.6 Content-Declarative Statements
+</a>
+<ul style='list-style-type:none'>
+
+</ul>
+</li>
+
+<li>
+<a href='Appendix-A-Predicate-Definition-Language.html#12-7-Comparison-Content-Declarative-Statement'>
+12.7 Comparison-Content Declarative Statement
+</a>
+<ul style='list-style-type:none'>
+
+</ul>
+</li>
+
+<li>
+<a href='Appendix-A-Predicate-Definition-Language.html#12-8-Complex-Condition-Predicates'>
+12.8 Complex Condition Predicates
+</a>
+<ul style='list-style-type:none'>
+
+</ul>
+</li>
+
+</ul>
+</li>
+
+<li>
+<a href='Appendix-B-Conformance-Statement-Definition-Language.html'>
+13 Appendix B: Conformance Statement Definition Language
+</a>
+<ul style='list-style-type:none'>
+<li>
+<a href='Appendix-B-Conformance-Statement-Definition-Language.html#13-1-Element-Location'>
+13.1 Element Location
+</a>
+<ul style='list-style-type:none'>
+
+</ul>
+</li>
+
+<li>
+<a href='Appendix-B-Conformance-Statement-Definition-Language.html#13-2-Propositions'>
+13.2 Propositions
+</a>
+<ul style='list-style-type:none'>
+
+</ul>
+</li>
+
+<li>
+<a href='Appendix-B-Conformance-Statement-Definition-Language.html#13-3-Occurrence-Declarative-Statement'>
+13.3 Occurrence-Declarative Statement
+</a>
+<ul style='list-style-type:none'>
+
+</ul>
+</li>
+
+<li>
+<a href='Appendix-B-Conformance-Statement-Definition-Language.html#13-4-Context'>
+13.4 Context
+</a>
+<ul style='list-style-type:none'>
+
+</ul>
+</li>
+
+<li>
+<a href='Appendix-B-Conformance-Statement-Definition-Language.html#13-5-Verbs'>
+13.5 Verbs
+</a>
+<ul style='list-style-type:none'>
+
+</ul>
+</li>
+
+<li>
+<a href='Appendix-B-Conformance-Statement-Definition-Language.html#13-6-Content-Declarative-Statement'>
+13.6 Content-Declarative Statement
+</a>
+<ul style='list-style-type:none'>
+
+</ul>
+</li>
+
+<li>
+<a href='Appendix-B-Conformance-Statement-Definition-Language.html#13-7-Comparison-Content-Declarative-Statement'>
+13.7 Comparison-Content Declarative Statement
+</a>
+<ul style='list-style-type:none'>
+
+</ul>
+</li>
+
+<li>
+<a href='Appendix-B-Conformance-Statement-Definition-Language.html#13-8-Complex-Conformance-Statements'>
+13.8 Complex Conformance Statements
+</a>
+<ul style='list-style-type:none'>
+
+</ul>
+</li>
+
+<li>
+<a href='Appendix-B-Conformance-Statement-Definition-Language.html#13-9-Free-Text-Conformance-Statements'>
+13.9 Free-Text Conformance Statements
+</a>
+<ul style='list-style-type:none'>
+
+</ul>
+</li>
+
+</ul>
+</li>
+
+</ul>
+
+<script src='js/jquery.js'></script>
+<script src='js/jquery-ui.min.js'></script>
+<script src='js/bootstrap.min.js'></script>
+<script src='js/respond.min.js'></script>
+<!-- %script{:src => "js/fhir.js"} / This file was empty so not including it -->
+<script src='js/codemirror/codemirror.js'></script>
+<script src='js/codemirror/mode/xml.js'></script>
+<script src='js/v2.js'></script>
+</div>
+<p></p>
+<div class='segment' id='segment-footer'>
+<div class='container'>
+<div class='inner-wrapper'>
+<p>
+&copy; HL7.org 2019+. HL7 v2+.
+</p>
+</div>
+</div>
+</div>
+</body>
+</html>

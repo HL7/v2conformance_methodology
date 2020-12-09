@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Slicing SlicingType="ordered" DefaultDataType=“XPN_0">
+  <Slice Datatype=“XPN_1" Occurrence=“1“/>
+  <Slice Datatype=“XPN_2" Occurrence=“2“/>
+</Slicing>
